@@ -1,0 +1,6 @@
+//
+// Prefix header for all source files of the 'osxgcdbImporter' target in the 'osxgcdbImporter' project
+//
+
+#ifdef __OBJC__
+#endif

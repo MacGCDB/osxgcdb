@@ -1,0 +1,484 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F8C93F0615CD5102008C53F8 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8C93F0515CD5102008C53F8 /* Cocoa.framework */; };
+		F8C93F1015CD5102008C53F8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F8C93F0E15CD5102008C53F8 /* InfoPlist.strings */; };
+		F8C93F1215CD5102008C53F8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F8C93F1115CD5102008C53F8 /* main.m */; };
+		F8C93F1615CD5102008C53F8 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = F8C93F1415CD5102008C53F8 /* Credits.rtf */; };
+		F8C93F1915CD5102008C53F8 /* gcdbAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F8C93F1815CD5102008C53F8 /* gcdbAppDelegate.m */; };
+		F8C93F1C15CD5102008C53F8 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8C93F1A15CD5102008C53F8 /* MainMenu.xib */; };
+		F8C93F1F15CD5102008C53F8 /* osxgcdb.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F8C93F1D15CD5102008C53F8 /* osxgcdb.xcdatamodeld */; };
+		F8C93F2715CD5103008C53F8 /* osxgcdbImporter.mdimporter in Resources */ = {isa = PBXBuildFile; fileRef = F8C93F2415CD5103008C53F8 /* osxgcdbImporter.mdimporter */; };
+		F8C93F2915CD5103008C53F8 /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8C93F2815CD5103008C53F8 /* CoreServices.framework */; };
+		F8C93F2B15CD5103008C53F8 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8C93F2A15CD5103008C53F8 /* CoreFoundation.framework */; };
+		F8C93F2D15CD5103008C53F8 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8C93F2C15CD5103008C53F8 /* CoreData.framework */; };
+		F8C93F2F15CD5103008C53F8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8C93F2E15CD5103008C53F8 /* Foundation.framework */; };
+		F8C93F3515CD5103008C53F8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F8C93F3315CD5103008C53F8 /* InfoPlist.strings */; };
+		F8C93F3715CD5103008C53F8 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = F8C93F3615CD5103008C53F8 /* main.c */; };
+		F8C93F3915CD5103008C53F8 /* GetMetadataForFile.m in Sources */ = {isa = PBXBuildFile; fileRef = F8C93F3815CD5103008C53F8 /* GetMetadataForFile.m */; };
+		F8C93F3C15CD5103008C53F8 /* MySpotlightImporter.m in Sources */ = {isa = PBXBuildFile; fileRef = F8C93F3B15CD5103008C53F8 /* MySpotlightImporter.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F8C93F2515CD5103008C53F8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F8C93EF815CD5102008C53F8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F8C93F2315CD5103008C53F8;
+			remoteInfo = osxgcdbImporter;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F8C93F0115CD5102008C53F8 /* osxgcdb.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = osxgcdb.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F8C93F0515CD5102008C53F8 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		F8C93F0815CD5102008C53F8 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		F8C93F0915CD5102008C53F8 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		F8C93F0A15CD5102008C53F8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		F8C93F0D15CD5102008C53F8 /* osxgcdb-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "osxgcdb-Info.plist"; sourceTree = "<group>"; };
+		F8C93F0F15CD5102008C53F8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		F8C93F1115CD5102008C53F8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F8C93F1315CD5102008C53F8 /* osxgcdb-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "osxgcdb-Prefix.pch"; sourceTree = "<group>"; };
+		F8C93F1515CD5102008C53F8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		F8C93F1715CD5102008C53F8 /* gcdbAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = gcdbAppDelegate.h; sourceTree = "<group>"; };
+		F8C93F1815CD5102008C53F8 /* gcdbAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = gcdbAppDelegate.m; sourceTree = "<group>"; };
+		F8C93F1B15CD5102008C53F8 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		F8C93F1E15CD5102008C53F8 /* osxgcdb.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = osxgcdb.xcdatamodel; sourceTree = "<group>"; };
+		F8C93F2415CD5103008C53F8 /* osxgcdbImporter.mdimporter */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = osxgcdbImporter.mdimporter; sourceTree = BUILT_PRODUCTS_DIR; };
+		F8C93F2815CD5103008C53F8 /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
+		F8C93F2A15CD5103008C53F8 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		F8C93F2C15CD5103008C53F8 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		F8C93F2E15CD5103008C53F8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		F8C93F3215CD5103008C53F8 /* osxgcdbImporter-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "osxgcdbImporter-Info.plist"; sourceTree = "<group>"; };
+		F8C93F3415CD5103008C53F8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		F8C93F3615CD5103008C53F8 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		F8C93F3815CD5103008C53F8 /* GetMetadataForFile.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GetMetadataForFile.m; sourceTree = "<group>"; };
+		F8C93F3A15CD5103008C53F8 /* MySpotlightImporter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MySpotlightImporter.h; sourceTree = "<group>"; };
+		F8C93F3B15CD5103008C53F8 /* MySpotlightImporter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MySpotlightImporter.m; sourceTree = "<group>"; };
+		F8C93F3D15CD5103008C53F8 /* Importer Read Me.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Importer Read Me.txt"; sourceTree = "<group>"; };
+		F8C93F3E15CD5103008C53F8 /* osxgcdbImporter-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "osxgcdbImporter-Prefix.pch"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F8C93EFE15CD5102008C53F8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F8C93F0615CD5102008C53F8 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F8C93F2115CD5103008C53F8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F8C93F2915CD5103008C53F8 /* CoreServices.framework in Frameworks */,
+				F8C93F2B15CD5103008C53F8 /* CoreFoundation.framework in Frameworks */,
+				F8C93F2D15CD5103008C53F8 /* CoreData.framework in Frameworks */,
+				F8C93F2F15CD5103008C53F8 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F8C93EF615CD5102008C53F8 = {
+			isa = PBXGroup;
+			children = (
+				F8C93F0B15CD5102008C53F8 /* osxgcdb */,
+				F8C93F3015CD5103008C53F8 /* osxgcdbImporter */,
+				F8C93F0415CD5102008C53F8 /* Frameworks */,
+				F8C93F0215CD5102008C53F8 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F8C93F0215CD5102008C53F8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F8C93F0115CD5102008C53F8 /* osxgcdb.app */,
+				F8C93F2415CD5103008C53F8 /* osxgcdbImporter.mdimporter */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F8C93F0415CD5102008C53F8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F8C93F0515CD5102008C53F8 /* Cocoa.framework */,
+				F8C93F2815CD5103008C53F8 /* CoreServices.framework */,
+				F8C93F2A15CD5103008C53F8 /* CoreFoundation.framework */,
+				F8C93F2C15CD5103008C53F8 /* CoreData.framework */,
+				F8C93F2E15CD5103008C53F8 /* Foundation.framework */,
+				F8C93F0715CD5102008C53F8 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F8C93F0715CD5102008C53F8 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F8C93F0815CD5102008C53F8 /* AppKit.framework */,
+				F8C93F0915CD5102008C53F8 /* CoreData.framework */,
+				F8C93F0A15CD5102008C53F8 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		F8C93F0B15CD5102008C53F8 /* osxgcdb */ = {
+			isa = PBXGroup;
+			children = (
+				F8C93F1715CD5102008C53F8 /* gcdbAppDelegate.h */,
+				F8C93F1815CD5102008C53F8 /* gcdbAppDelegate.m */,
+				F8C93F1A15CD5102008C53F8 /* MainMenu.xib */,
+				F8C93F1D15CD5102008C53F8 /* osxgcdb.xcdatamodeld */,
+				F8C93F0C15CD5102008C53F8 /* Supporting Files */,
+			);
+			path = osxgcdb;
+			sourceTree = "<group>";
+		};
+		F8C93F0C15CD5102008C53F8 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F8C93F0D15CD5102008C53F8 /* osxgcdb-Info.plist */,
+				F8C93F0E15CD5102008C53F8 /* InfoPlist.strings */,
+				F8C93F1115CD5102008C53F8 /* main.m */,
+				F8C93F1315CD5102008C53F8 /* osxgcdb-Prefix.pch */,
+				F8C93F1415CD5102008C53F8 /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F8C93F3015CD5103008C53F8 /* osxgcdbImporter */ = {
+			isa = PBXGroup;
+			children = (
+				F8C93F3815CD5103008C53F8 /* GetMetadataForFile.m */,
+				F8C93F3A15CD5103008C53F8 /* MySpotlightImporter.h */,
+				F8C93F3B15CD5103008C53F8 /* MySpotlightImporter.m */,
+				F8C93F3D15CD5103008C53F8 /* Importer Read Me.txt */,
+				F8C93F3115CD5103008C53F8 /* Supporting Files */,
+			);
+			path = osxgcdbImporter;
+			sourceTree = "<group>";
+		};
+		F8C93F3115CD5103008C53F8 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F8C93F3215CD5103008C53F8 /* osxgcdbImporter-Info.plist */,
+				F8C93F3315CD5103008C53F8 /* InfoPlist.strings */,
+				F8C93F3615CD5103008C53F8 /* main.c */,
+				F8C93F3E15CD5103008C53F8 /* osxgcdbImporter-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F8C93F0015CD5102008C53F8 /* osxgcdb */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F8C93F4415CD5103008C53F8 /* Build configuration list for PBXNativeTarget "osxgcdb" */;
+			buildPhases = (
+				F8C93EFD15CD5102008C53F8 /* Sources */,
+				F8C93EFE15CD5102008C53F8 /* Frameworks */,
+				F8C93EFF15CD5102008C53F8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F8C93F2615CD5103008C53F8 /* PBXTargetDependency */,
+			);
+			name = osxgcdb;
+			productName = osxgcdb;
+			productReference = F8C93F0115CD5102008C53F8 /* osxgcdb.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F8C93F2315CD5103008C53F8 /* osxgcdbImporter */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F8C93F4115CD5103008C53F8 /* Build configuration list for PBXNativeTarget "osxgcdbImporter" */;
+			buildPhases = (
+				F8C93F2015CD5103008C53F8 /* Sources */,
+				F8C93F2115CD5103008C53F8 /* Frameworks */,
+				F8C93F2215CD5103008C53F8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = osxgcdbImporter;
+			productName = osxgcdbImporter;
+			productReference = F8C93F2415CD5103008C53F8 /* osxgcdbImporter.mdimporter */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F8C93EF815CD5102008C53F8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = gcdb;
+				LastUpgradeCheck = 0440;
+				ORGANIZATIONNAME = "Danger Man Konsumprodukte";
+			};
+			buildConfigurationList = F8C93EFB15CD5102008C53F8 /* Build configuration list for PBXProject "osxgcdb" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = F8C93EF615CD5102008C53F8;
+			productRefGroup = F8C93F0215CD5102008C53F8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F8C93F0015CD5102008C53F8 /* osxgcdb */,
+				F8C93F2315CD5103008C53F8 /* osxgcdbImporter */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F8C93EFF15CD5102008C53F8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F8C93F1015CD5102008C53F8 /* InfoPlist.strings in Resources */,
+				F8C93F1615CD5102008C53F8 /* Credits.rtf in Resources */,
+				F8C93F1C15CD5102008C53F8 /* MainMenu.xib in Resources */,
+				F8C93F2715CD5103008C53F8 /* osxgcdbImporter.mdimporter in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F8C93F2215CD5103008C53F8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F8C93F3515CD5103008C53F8 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F8C93EFD15CD5102008C53F8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F8C93F1215CD5102008C53F8 /* main.m in Sources */,
+				F8C93F1915CD5102008C53F8 /* gcdbAppDelegate.m in Sources */,
+				F8C93F1F15CD5102008C53F8 /* osxgcdb.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F8C93F2015CD5103008C53F8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F8C93F3715CD5103008C53F8 /* main.c in Sources */,
+				F8C93F3915CD5103008C53F8 /* GetMetadataForFile.m in Sources */,
+				F8C93F3C15CD5103008C53F8 /* MySpotlightImporter.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F8C93F2615CD5103008C53F8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F8C93F2315CD5103008C53F8 /* osxgcdbImporter */;
+			targetProxy = F8C93F2515CD5103008C53F8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F8C93F0E15CD5102008C53F8 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F8C93F0F15CD5102008C53F8 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		F8C93F1415CD5102008C53F8 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F8C93F1515CD5102008C53F8 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		F8C93F1A15CD5102008C53F8 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F8C93F1B15CD5102008C53F8 /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		F8C93F3315CD5103008C53F8 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F8C93F3415CD5103008C53F8 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F8C93F3F15CD5103008C53F8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		F8C93F4015CD5103008C53F8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		F8C93F4215CD5103008C53F8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "osxgcdbImporter/osxgcdbImporter-Prefix.pch";
+				INFOPLIST_FILE = "osxgcdbImporter/osxgcdbImporter-Info.plist";
+				INSTALL_PATH = "@executable_path/../Contents/Library/Spotlight";
+				LIBRARY_STYLE = BUNDLE;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = mdimporter;
+			};
+			name = Debug;
+		};
+		F8C93F4315CD5103008C53F8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "osxgcdbImporter/osxgcdbImporter-Prefix.pch";
+				INFOPLIST_FILE = "osxgcdbImporter/osxgcdbImporter-Info.plist";
+				INSTALL_PATH = "@executable_path/../Contents/Library/Spotlight";
+				LIBRARY_STYLE = BUNDLE;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = mdimporter;
+			};
+			name = Release;
+		};
+		F8C93F4515CD5103008C53F8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "osxgcdb/osxgcdb-Prefix.pch";
+				INFOPLIST_FILE = "osxgcdb/osxgcdb-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		F8C93F4615CD5103008C53F8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "osxgcdb/osxgcdb-Prefix.pch";
+				INFOPLIST_FILE = "osxgcdb/osxgcdb-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F8C93EFB15CD5102008C53F8 /* Build configuration list for PBXProject "osxgcdb" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F8C93F3F15CD5103008C53F8 /* Debug */,
+				F8C93F4015CD5103008C53F8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F8C93F4115CD5103008C53F8 /* Build configuration list for PBXNativeTarget "osxgcdbImporter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F8C93F4215CD5103008C53F8 /* Debug */,
+				F8C93F4315CD5103008C53F8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		F8C93F4415CD5103008C53F8 /* Build configuration list for PBXNativeTarget "osxgcdb" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F8C93F4515CD5103008C53F8 /* Debug */,
+				F8C93F4615CD5103008C53F8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		F8C93F1D15CD5102008C53F8 /* osxgcdb.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				F8C93F1E15CD5102008C53F8 /* osxgcdb.xcdatamodel */,
+			);
+			currentVersion = F8C93F1E15CD5102008C53F8 /* osxgcdb.xcdatamodel */;
+			path = osxgcdb.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = F8C93EF815CD5102008C53F8 /* Project object */;
+}
