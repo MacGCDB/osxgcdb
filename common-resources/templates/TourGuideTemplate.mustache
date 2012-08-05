@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<gpx xmlns="http://www.topografix.com/GPX/1/1" creator="Blarg" version="1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+  <metadata>
+    <link href="http://www.garmin.com">
+      <text>Blarg</text>
+    </link>
+    <time>2008-08-03T15:01:47Z</time>
+  </metadata>
+{{#Caches}} 
+  <wpt lat="{{lat}}" lon="{{lon}}">
+	<time>2008-07-27T16:06:03Z</time>
+	<name>{{smartName}}</name>
+	<cmt>{{desc}} {{smartName}}</cmt>
+        <desc>&lt;br&gt;{{coordinates}}&lt;br&gt;{{htmlDescription}}&lt;br&gt;{{relDetails/groundspeak_encoded_hints}}</desc>
+	<sym>{{sym}}</sym>
+        <extensions>
+            <gpxx:WaypointExtension xmlns:gpxx="http://www.garmin.com/xmlschemas/GpxExtensions/v3">
+                <gpxx:DisplayMode>SymbolAndName</gpxx:DisplayMode>
+                <gpxx:Address>
+                    <gpxx:PostalCode>
+                    {{relDetails/groundspeak_container}}
+					{{relDetails/groundspeak_type}}{{^isAvailable}}
+					Not available{{/isAvailable}}
+                    {{name}} 
+					{{desc}}
+                    {{coordinates}}</gpxx:PostalCode>
+                </gpxx:Address>
+            </gpxx:WaypointExtension>
+        </extensions>
+  </wpt>{{/Caches}}
+{{#Waypoints}} 
+  <wpt lat="{{lat}}" lon="{{lon}}">
+	<time>2008-07-27T16:06:03Z</time>
+	<name>{{name}} {{desc}}</name>
+	<cmt>{{cmt}}</cmt>
+        <desc>&lt;br&gt;{{coordinates}}&lt;br&gt;{{type}}&lt;br&gt;{{sym}}&lt;br&gt;{{desc}}&lt;br&gt;{{cmt}}</desc>
+	<sym>{{sym}}</sym>
+        <extensions>
+            <gpxx:WaypointExtension xmlns:gpxx="http://www.garmin.com/xmlschemas/GpxExtensions/v3">
+                <gpxx:DisplayMode>SymbolAndName</gpxx:DisplayMode>
+                <gpxx:Address>
+                    <gpxx:PostalCode>
+                    {{name}} 
+					{{desc}}
+                    {{coordinates}}</gpxx:PostalCode>
+                </gpxx:Address>
+            </gpxx:WaypointExtension>
+        </extensions>
+  </wpt>{{/Waypoints}}
+</gpx>

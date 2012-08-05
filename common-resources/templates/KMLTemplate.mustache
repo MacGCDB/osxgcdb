@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>Mac GCDB KML file</name>
+    <open>1</open>
+    <description>KML export file produced by Mac GCDB</description>
+    <Style id="downArrowIcon">
+      <IconStyle>
+<scale>0.75</scale>
+        <Icon>
+          <href>./test.png</href>
+        </Icon>
+      </IconStyle>
+    </Style>
+
+{{#Caches}} 
+<Placemark>
+	<name>{{smartName}}</name>
+	<description>{{desc}}&lt;br&gt;{{relDetails/groundspeak_container}}
+					{{relDetails/groundspeak_type}}{{^isAvailable}}
+					Not available{{/isAvailable}}
+                    &lt;br&gt;&lt;a href=&quot;{{url}}&quot;&gt;{{name}}&lt;/a&gt;
+                    &lt;br&gt;{{coordinates}}</description>
+	<Point>
+		<coordinates>{{lon}},{{lat}},0</coordinates>
+	</Point>
+</Placemark>
+<Folder>
+	<name>{{name}} Child Waypoints</name>
+	<visibility>0</visibility>
+
+{{#relChild}}
+<Placemark>
+	<name>{{name}} - {{desc}}</name>
+	<description>{{cmt}}</description>
+    <visibility>0</visibility>
+	<styleUrl>#downArrowIcon</styleUrl>
+	<Point>
+		<coordinates>{{lon}},{{lat}},0</coordinates>
+	</Point>
+</Placemark>{{/relChild}}</Folder>{{/Caches}}
+
+</Document>
+</kml>
