@@ -23,6 +23,20 @@
 		F8C93F3715CD5103008C53F8 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = F8C93F3615CD5103008C53F8 /* main.c */; };
 		F8C93F3915CD5103008C53F8 /* GetMetadataForFile.m in Sources */ = {isa = PBXBuildFile; fileRef = F8C93F3815CD5103008C53F8 /* GetMetadataForFile.m */; };
 		F8C93F3C15CD5103008C53F8 /* MySpotlightImporter.m in Sources */ = {isa = PBXBuildFile; fileRef = F8C93F3B15CD5103008C53F8 /* MySpotlightImporter.m */; };
+		F8C93F4915CD6923008C53F8 /* macgcdb.icns in Resources */ = {isa = PBXBuildFile; fileRef = F8C93F4815CD6923008C53F8 /* macgcdb.icns */; };
+		F8C9446B15CD6FB6008C53F8 /* project-downloads.rtf in Resources */ = {isa = PBXBuildFile; fileRef = F8C9425D15CD6FB4008C53F8 /* project-downloads.rtf */; };
+		F8C9455715CD75A0008C53F8 /* DDASLLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = F8C9455015CD75A0008C53F8 /* DDASLLogger.m */; };
+		F8C9455815CD75A0008C53F8 /* DDFileLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = F8C9455215CD75A0008C53F8 /* DDFileLogger.m */; };
+		F8C9455915CD75A0008C53F8 /* DDLog.m in Sources */ = {isa = PBXBuildFile; fileRef = F8C9455415CD75A0008C53F8 /* DDLog.m */; };
+		F8C9455A15CD75A0008C53F8 /* DDTTYLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = F8C9455615CD75A0008C53F8 /* DDTTYLogger.m */; };
+		F8C9455E15CDA8EB008C53F8 /* libGRMustache4-MacOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F8C9455D15CDA8EB008C53F8 /* libGRMustache4-MacOS.a */; };
+		F8C9456C15CDAF50008C53F8 /* ioapi.c in Sources */ = {isa = PBXBuildFile; fileRef = F8C9456215CDAF50008C53F8 /* ioapi.c */; };
+		F8C9456D15CDAF50008C53F8 /* mztools.c in Sources */ = {isa = PBXBuildFile; fileRef = F8C9456415CDAF50008C53F8 /* mztools.c */; };
+		F8C9456E15CDAF50008C53F8 /* unzip.c in Sources */ = {isa = PBXBuildFile; fileRef = F8C9456615CDAF50008C53F8 /* unzip.c */; };
+		F8C9456F15CDAF50008C53F8 /* zip.c in Sources */ = {isa = PBXBuildFile; fileRef = F8C9456815CDAF50008C53F8 /* zip.c */; };
+		F8C9457015CDAF50008C53F8 /* SSZipArchive.m in Sources */ = {isa = PBXBuildFile; fileRef = F8C9456B15CDAF50008C53F8 /* SSZipArchive.m */; };
+		F8C9457215CDB053008C53F8 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F8C9457115CDB053008C53F8 /* libz.dylib */; };
+		F8C9457415CDCD82008C53F8 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = F8C9457315CDCD82008C53F8 /* LICENSE */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +77,32 @@
 		F8C93F3B15CD5103008C53F8 /* MySpotlightImporter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MySpotlightImporter.m; sourceTree = "<group>"; };
 		F8C93F3D15CD5103008C53F8 /* Importer Read Me.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Importer Read Me.txt"; sourceTree = "<group>"; };
 		F8C93F3E15CD5103008C53F8 /* osxgcdbImporter-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "osxgcdbImporter-Prefix.pch"; sourceTree = "<group>"; };
+		F8C93F4715CD5134008C53F8 /* osxgcdb.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = osxgcdb.entitlements; sourceTree = "<group>"; };
+		F8C93F4815CD6923008C53F8 /* macgcdb.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = macgcdb.icns; sourceTree = "<group>"; };
+		F8C9425D15CD6FB4008C53F8 /* project-downloads.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "project-downloads.rtf"; sourceTree = "<group>"; };
+		F8C9454F15CD75A0008C53F8 /* DDASLLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DDASLLogger.h; path = CocoaLumberjack/Lumberjack/DDASLLogger.h; sourceTree = "<group>"; };
+		F8C9455015CD75A0008C53F8 /* DDASLLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DDASLLogger.m; path = CocoaLumberjack/Lumberjack/DDASLLogger.m; sourceTree = "<group>"; };
+		F8C9455115CD75A0008C53F8 /* DDFileLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DDFileLogger.h; path = CocoaLumberjack/Lumberjack/DDFileLogger.h; sourceTree = "<group>"; };
+		F8C9455215CD75A0008C53F8 /* DDFileLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DDFileLogger.m; path = CocoaLumberjack/Lumberjack/DDFileLogger.m; sourceTree = "<group>"; };
+		F8C9455315CD75A0008C53F8 /* DDLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DDLog.h; path = CocoaLumberjack/Lumberjack/DDLog.h; sourceTree = "<group>"; };
+		F8C9455415CD75A0008C53F8 /* DDLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DDLog.m; path = CocoaLumberjack/Lumberjack/DDLog.m; sourceTree = "<group>"; };
+		F8C9455515CD75A0008C53F8 /* DDTTYLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DDTTYLogger.h; path = CocoaLumberjack/Lumberjack/DDTTYLogger.h; sourceTree = "<group>"; };
+		F8C9455615CD75A0008C53F8 /* DDTTYLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DDTTYLogger.m; path = CocoaLumberjack/Lumberjack/DDTTYLogger.m; sourceTree = "<group>"; };
+		F8C9455C15CDA8DE008C53F8 /* GRMustache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GRMustache.h; path = GRMustache/include/GRMustache.h; sourceTree = "<group>"; };
+		F8C9455D15CDA8EB008C53F8 /* libGRMustache4-MacOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libGRMustache4-MacOS.a"; path = "GRMustache/lib/libGRMustache4-MacOS.a"; sourceTree = "<group>"; };
+		F8C9456115CDAF50008C53F8 /* crypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = crypt.h; sourceTree = "<group>"; };
+		F8C9456215CDAF50008C53F8 /* ioapi.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ioapi.c; sourceTree = "<group>"; };
+		F8C9456315CDAF50008C53F8 /* ioapi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ioapi.h; sourceTree = "<group>"; };
+		F8C9456415CDAF50008C53F8 /* mztools.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mztools.c; sourceTree = "<group>"; };
+		F8C9456515CDAF50008C53F8 /* mztools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mztools.h; sourceTree = "<group>"; };
+		F8C9456615CDAF50008C53F8 /* unzip.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = unzip.c; sourceTree = "<group>"; };
+		F8C9456715CDAF50008C53F8 /* unzip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = unzip.h; sourceTree = "<group>"; };
+		F8C9456815CDAF50008C53F8 /* zip.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = zip.c; sourceTree = "<group>"; };
+		F8C9456915CDAF50008C53F8 /* zip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zip.h; sourceTree = "<group>"; };
+		F8C9456A15CDAF50008C53F8 /* SSZipArchive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SSZipArchive.h; path = ssziparchive/SSZipArchive.h; sourceTree = "<group>"; };
+		F8C9456B15CDAF50008C53F8 /* SSZipArchive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SSZipArchive.m; path = ssziparchive/SSZipArchive.m; sourceTree = "<group>"; };
+		F8C9457115CDB053008C53F8 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		F8C9457315CDCD82008C53F8 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,7 +110,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8C9457215CDB053008C53F8 /* libz.dylib in Frameworks */,
 				F8C93F0615CD5102008C53F8 /* Cocoa.framework in Frameworks */,
+				F8C9455E15CDA8EB008C53F8 /* libGRMustache4-MacOS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,6 +133,9 @@
 		F8C93EF615CD5102008C53F8 = {
 			isa = PBXGroup;
 			children = (
+				F8C9457315CDCD82008C53F8 /* LICENSE */,
+				F8C9457115CDB053008C53F8 /* libz.dylib */,
+				F8C93F4815CD6923008C53F8 /* macgcdb.icns */,
 				F8C93F0B15CD5102008C53F8 /* osxgcdb */,
 				F8C93F3015CD5103008C53F8 /* osxgcdbImporter */,
 				F8C93F0415CD5102008C53F8 /* Frameworks */,
@@ -133,6 +178,8 @@
 		F8C93F0B15CD5102008C53F8 /* osxgcdb */ = {
 			isa = PBXGroup;
 			children = (
+				F8C93F4B15CD6FB3008C53F8 /* external-projects */,
+				F8C93F4715CD5134008C53F8 /* osxgcdb.entitlements */,
 				F8C93F1715CD5102008C53F8 /* gcdbAppDelegate.h */,
 				F8C93F1815CD5102008C53F8 /* gcdbAppDelegate.m */,
 				F8C93F1A15CD5102008C53F8 /* MainMenu.xib */,
@@ -175,6 +222,68 @@
 				F8C93F3E15CD5103008C53F8 /* osxgcdbImporter-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F8C93F4B15CD6FB3008C53F8 /* external-projects */ = {
+			isa = PBXGroup;
+			children = (
+				F8C9455F15CDAF2A008C53F8 /* ssziparchive */,
+				F8C9455B15CDA8AD008C53F8 /* GRMustache */,
+				F8C9454E15CD70F4008C53F8 /* CocoaLumberjack */,
+				F8C9425D15CD6FB4008C53F8 /* project-downloads.rtf */,
+			);
+			path = "external-projects";
+			sourceTree = "<group>";
+		};
+		F8C9454E15CD70F4008C53F8 /* CocoaLumberjack */ = {
+			isa = PBXGroup;
+			children = (
+				F8C9454F15CD75A0008C53F8 /* DDASLLogger.h */,
+				F8C9455015CD75A0008C53F8 /* DDASLLogger.m */,
+				F8C9455115CD75A0008C53F8 /* DDFileLogger.h */,
+				F8C9455215CD75A0008C53F8 /* DDFileLogger.m */,
+				F8C9455315CD75A0008C53F8 /* DDLog.h */,
+				F8C9455415CD75A0008C53F8 /* DDLog.m */,
+				F8C9455515CD75A0008C53F8 /* DDTTYLogger.h */,
+				F8C9455615CD75A0008C53F8 /* DDTTYLogger.m */,
+			);
+			name = CocoaLumberjack;
+			sourceTree = "<group>";
+		};
+		F8C9455B15CDA8AD008C53F8 /* GRMustache */ = {
+			isa = PBXGroup;
+			children = (
+				F8C9455D15CDA8EB008C53F8 /* libGRMustache4-MacOS.a */,
+				F8C9455C15CDA8DE008C53F8 /* GRMustache.h */,
+			);
+			name = GRMustache;
+			sourceTree = "<group>";
+		};
+		F8C9455F15CDAF2A008C53F8 /* ssziparchive */ = {
+			isa = PBXGroup;
+			children = (
+				F8C9456015CDAF50008C53F8 /* minizip */,
+				F8C9456A15CDAF50008C53F8 /* SSZipArchive.h */,
+				F8C9456B15CDAF50008C53F8 /* SSZipArchive.m */,
+			);
+			name = ssziparchive;
+			sourceTree = "<group>";
+		};
+		F8C9456015CDAF50008C53F8 /* minizip */ = {
+			isa = PBXGroup;
+			children = (
+				F8C9456115CDAF50008C53F8 /* crypt.h */,
+				F8C9456215CDAF50008C53F8 /* ioapi.c */,
+				F8C9456315CDAF50008C53F8 /* ioapi.h */,
+				F8C9456415CDAF50008C53F8 /* mztools.c */,
+				F8C9456515CDAF50008C53F8 /* mztools.h */,
+				F8C9456615CDAF50008C53F8 /* unzip.c */,
+				F8C9456715CDAF50008C53F8 /* unzip.h */,
+				F8C9456815CDAF50008C53F8 /* zip.c */,
+				F8C9456915CDAF50008C53F8 /* zip.h */,
+			);
+			name = minizip;
+			path = ssziparchive/minizip;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,6 +340,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				English,
 			);
 			mainGroup = F8C93EF615CD5102008C53F8;
 			productRefGroup = F8C93F0215CD5102008C53F8 /* Products */;
@@ -252,6 +362,9 @@
 				F8C93F1615CD5102008C53F8 /* Credits.rtf in Resources */,
 				F8C93F1C15CD5102008C53F8 /* MainMenu.xib in Resources */,
 				F8C93F2715CD5103008C53F8 /* osxgcdbImporter.mdimporter in Resources */,
+				F8C93F4915CD6923008C53F8 /* macgcdb.icns in Resources */,
+				F8C9446B15CD6FB6008C53F8 /* project-downloads.rtf in Resources */,
+				F8C9457415CDCD82008C53F8 /* LICENSE in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,6 +386,15 @@
 				F8C93F1215CD5102008C53F8 /* main.m in Sources */,
 				F8C93F1915CD5102008C53F8 /* gcdbAppDelegate.m in Sources */,
 				F8C93F1F15CD5102008C53F8 /* osxgcdb.xcdatamodeld in Sources */,
+				F8C9455715CD75A0008C53F8 /* DDASLLogger.m in Sources */,
+				F8C9455815CD75A0008C53F8 /* DDFileLogger.m in Sources */,
+				F8C9455915CD75A0008C53F8 /* DDLog.m in Sources */,
+				F8C9455A15CD75A0008C53F8 /* DDTTYLogger.m in Sources */,
+				F8C9456C15CDAF50008C53F8 /* ioapi.c in Sources */,
+				F8C9456D15CDAF50008C53F8 /* mztools.c in Sources */,
+				F8C9456E15CDAF50008C53F8 /* unzip.c in Sources */,
+				F8C9456F15CDAF50008C53F8 /* zip.c in Sources */,
+				F8C9457015CDAF50008C53F8 /* SSZipArchive.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -416,10 +538,15 @@
 		F8C93F4515CD5103008C53F8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = osxgcdb/osxgcdb.entitlements;
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "osxgcdb/osxgcdb-Prefix.pch";
 				INFOPLIST_FILE = "osxgcdb/osxgcdb-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/osxgcdb/external-projects/GRMustache/lib\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -428,10 +555,15 @@
 		F8C93F4615CD5103008C53F8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = osxgcdb/osxgcdb.entitlements;
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "osxgcdb/osxgcdb-Prefix.pch";
 				INFOPLIST_FILE = "osxgcdb/osxgcdb-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/osxgcdb/external-projects/GRMustache/lib\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

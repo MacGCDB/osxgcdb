@@ -2,11 +2,37 @@
 //  gcdbAppDelegate.m
 //  osxgcdb
 //
-//  Created by Gordon McDorman on 4-8-12.
-//  Copyright (c) 2012 Danger Man Konsumprodukte. All rights reserved.
+//  Created by MacGCDB (macgcdb@googlemail.com) on 4-8-12.
+//  Copyright (c) 2012 MacGCDB. All rights reserved.
 //
+//
+//  This file is part of osxgcdb.
+//
+//  osxgcdb is free software: you can redistribute it and/or modify
+//  it under the terms of the GNU General Public License as published by
+//  the Free Software Foundation, either version 3 of the License, or
+//  (at your option) any later version.
+//
+//  osxgcdb is distributed in the hope that it will be useful,
+//  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//  GNU General Public License for more details.
+//
+//  You should have received a copy of the GNU General Public License
+//  along with osxgcdb.  If not, see <http://www.gnu.org/licenses/>.
 
 #import "gcdbAppDelegate.h"
+
+#import "DDLog.h"
+#import "DDASLLogger.h"
+#import "DDTTYLogger.h"
+#import "DDFileLogger.h"
+
+#import "GRMustache.h"
+
+#import "SSZipArchive.h"
+
+static const int ddLogLevel = LOG_LEVEL_INFO; //LOG_LEVEL_VERBOSE
 
 @implementation gcdbAppDelegate
 
@@ -17,6 +43,24 @@
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
     // Insert code here to initialize your application
+    
+    [DDLog addLogger:[DDASLLogger sharedInstance]];
+    [DDLog addLogger:[DDTTYLogger sharedInstance]];
+    
+    DDFileLogger *fileLogger = [[DDFileLogger alloc] init];
+    fileLogger.rollingFrequency = 60 * 60 * 24; // 24 hour rolling
+    fileLogger.logFileManager.maximumNumberOfLogFiles = 7;
+    
+    [DDLog addLogger:fileLogger];
+    
+    DDLogInfo(@"Initialized logger.");
+    
+    NSDictionary *dictionary = [NSDictionary dictionaryWithObject:[NSNumber numberWithInt:2] forKey:@"count"];
+    NSString *templateString = @"I have {{count}} arms.";
+    NSString *rendering = [GRMustacheTemplate renderObject:dictionary fromString:templateString error:NULL];
+    
+    DDLogInfo(@"Rendered template: %@", rendering);
+    
 }
 
 // Returns the directory the application uses to store the Core Data store file. This code uses a directory named "com.dangermankonsumprodukte.osxgcdb" in the user's Application Support directory.

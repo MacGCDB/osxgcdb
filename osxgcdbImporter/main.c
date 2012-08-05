@@ -2,8 +2,8 @@
 //  main.c
 //  osxgcdbImporter
 //
-//  Created by Gordon McDorman on 4-8-12.
-//  Copyright (c) 2012 Danger Man Konsumprodukte. All rights reserved.
+//  Created by MacGCDB  (macgcdb@googlemail.com) on 4-8-12.
+//  Copyright (c) 2012 MacGCDB. All rights reserved.
 //
 
 
