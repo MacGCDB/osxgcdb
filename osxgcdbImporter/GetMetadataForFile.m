@@ -46,12 +46,14 @@ Boolean GetMetadataForFile(void *thisInterface, CFMutableDictionaryRef attribute
 	// The path could point to either a Core Data store file in which
 	// case we import the store's metadata, or it could point to a Core
 	// Data external record file for a specific record instances
+    
+    NSLog(@"GetMetadataForFile");
 
     Boolean ok = FALSE;
     @autoreleasepool {
         NSError *error = nil;
         
-        if ([(__bridge NSString *)contentTypeUTI isEqualToString:@"YOUR_STORE_FILE_UTI"]) {
+        if ([(__bridge NSString *)contentTypeUTI isEqualToString:@"com.dangermankonsumprodukte.osxgcdb.osxgcdb"]) {
             // import from store file metadata
             
             // Create the URL, then attempt to get the meta-data from the store
@@ -71,7 +73,7 @@ Boolean GetMetadataForFile(void *thisInterface, CFMutableDictionaryRef attribute
                 }
             }
             
-        } else if ([(__bridge NSString *)contentTypeUTI isEqualToString:@"YOUR_EXTERNAL_RECORD_UTI"]) {
+        } else if ([(__bridge NSString *)contentTypeUTI isEqualToString:@"com.dangermankonsumprodukte.osxgcdb.geocacherec"]) {
             // import from an external record file
             
             MySpotlightImporter *importer = [[MySpotlightImporter alloc] init];

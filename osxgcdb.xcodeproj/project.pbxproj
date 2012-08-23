@@ -7,6 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F8734E6F15D38ADA00642F8B /* Groundspeak_attributes.m in Sources */ = {isa = PBXBuildFile; fileRef = F8734E6E15D38ADA00642F8B /* Groundspeak_attributes.m */; };
+		F8734E7215D38ADA00642F8B /* Cache.m in Sources */ = {isa = PBXBuildFile; fileRef = F8734E7115D38ADA00642F8B /* Cache.m */; };
+		F8734E7515D38ADA00642F8B /* Childwaypoint.m in Sources */ = {isa = PBXBuildFile; fileRef = F8734E7415D38ADA00642F8B /* Childwaypoint.m */; };
+		F8734E7815D38ADA00642F8B /* Details.m in Sources */ = {isa = PBXBuildFile; fileRef = F8734E7715D38ADA00642F8B /* Details.m */; };
+		F8734E7B15D38ADA00642F8B /* GCVote.m in Sources */ = {isa = PBXBuildFile; fileRef = F8734E7A15D38ADA00642F8B /* GCVote.m */; };
+		F8734E7E15D38ADA00642F8B /* PQassignment.m in Sources */ = {isa = PBXBuildFile; fileRef = F8734E7D15D38ADA00642F8B /* PQassignment.m */; };
+		F8734E8115D38ADA00642F8B /* Travelbug.m in Sources */ = {isa = PBXBuildFile; fileRef = F8734E8015D38ADA00642F8B /* Travelbug.m */; };
+		F8734E8415D38ADB00642F8B /* Pocketqueries.m in Sources */ = {isa = PBXBuildFile; fileRef = F8734E8315D38ADB00642F8B /* Pocketqueries.m */; };
+		F8734E8715D38ADB00642F8B /* Cachelog.m in Sources */ = {isa = PBXBuildFile; fileRef = F8734E8615D38ADB00642F8B /* Cachelog.m */; };
+		F8734E8D15D38ADB00642F8B /* Waypoint.m in Sources */ = {isa = PBXBuildFile; fileRef = F8734E8C15D38ADB00642F8B /* Waypoint.m */; };
+		F8734E9115D6A67E00642F8B /* gcdbPQImport.m in Sources */ = {isa = PBXBuildFile; fileRef = F8734E9015D6A67E00642F8B /* gcdbPQImport.m */; };
+		F8734E9515D7EEA100642F8B /* gcdbXMLUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = F8734E9415D7EEA100642F8B /* gcdbXMLUtils.m */; };
+		F8734E9B15D7F55200642F8B /* NSObject+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = F8734E9A15D7F55200642F8B /* NSObject+Utils.m */; };
+		F8734E9E15D7F8AC00642F8B /* gcdbMOCUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = F8734E9D15D7F8AB00642F8B /* gcdbMOCUtils.m */; };
+		F8734EA115D809F300642F8B /* gcdbGeocacheUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = F8734EA015D809F300642F8B /* gcdbGeocacheUtils.m */; };
+		F8734EA415D85B8100642F8B /* Userattributes.m in Sources */ = {isa = PBXBuildFile; fileRef = F8734EA315D85B7E00642F8B /* Userattributes.m */; };
+		F8C4A00615E42A3600BD0BCB /* gcdbNSView.m in Sources */ = {isa = PBXBuildFile; fileRef = F8C4A00515E42A3500BD0BCB /* gcdbNSView.m */; };
 		F8C93F0615CD5102008C53F8 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8C93F0515CD5102008C53F8 /* Cocoa.framework */; };
 		F8C93F1015CD5102008C53F8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F8C93F0E15CD5102008C53F8 /* InfoPlist.strings */; };
 		F8C93F1215CD5102008C53F8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F8C93F1115CD5102008C53F8 /* main.m */; };
@@ -37,6 +54,7 @@
 		F8C9457015CDAF50008C53F8 /* SSZipArchive.m in Sources */ = {isa = PBXBuildFile; fileRef = F8C9456B15CDAF50008C53F8 /* SSZipArchive.m */; };
 		F8C9457215CDB053008C53F8 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F8C9457115CDB053008C53F8 /* libz.dylib */; };
 		F8C9457415CDCD82008C53F8 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = F8C9457315CDCD82008C53F8 /* LICENSE */; };
+		F8FDE1D515E6D8C000F00DFC /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8FDE1D415E6D8C000F00DFC /* WebKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +68,40 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F8734E6D15D38ADA00642F8B /* Groundspeak_attributes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Groundspeak_attributes.h; path = "core-data-classes/Groundspeak_attributes.h"; sourceTree = "<group>"; };
+		F8734E6E15D38ADA00642F8B /* Groundspeak_attributes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Groundspeak_attributes.m; path = "core-data-classes/Groundspeak_attributes.m"; sourceTree = "<group>"; };
+		F8734E7015D38ADA00642F8B /* Cache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Cache.h; path = "core-data-classes/Cache.h"; sourceTree = "<group>"; };
+		F8734E7115D38ADA00642F8B /* Cache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Cache.m; path = "core-data-classes/Cache.m"; sourceTree = "<group>"; };
+		F8734E7315D38ADA00642F8B /* Childwaypoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Childwaypoint.h; path = "core-data-classes/Childwaypoint.h"; sourceTree = "<group>"; };
+		F8734E7415D38ADA00642F8B /* Childwaypoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Childwaypoint.m; path = "core-data-classes/Childwaypoint.m"; sourceTree = "<group>"; };
+		F8734E7615D38ADA00642F8B /* Details.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Details.h; path = "core-data-classes/Details.h"; sourceTree = "<group>"; };
+		F8734E7715D38ADA00642F8B /* Details.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Details.m; path = "core-data-classes/Details.m"; sourceTree = "<group>"; };
+		F8734E7915D38ADA00642F8B /* GCVote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GCVote.h; path = "core-data-classes/GCVote.h"; sourceTree = "<group>"; };
+		F8734E7A15D38ADA00642F8B /* GCVote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GCVote.m; path = "core-data-classes/GCVote.m"; sourceTree = "<group>"; };
+		F8734E7C15D38ADA00642F8B /* PQassignment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PQassignment.h; path = "core-data-classes/PQassignment.h"; sourceTree = "<group>"; };
+		F8734E7D15D38ADA00642F8B /* PQassignment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PQassignment.m; path = "core-data-classes/PQassignment.m"; sourceTree = "<group>"; };
+		F8734E7F15D38ADA00642F8B /* Travelbug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Travelbug.h; path = "core-data-classes/Travelbug.h"; sourceTree = "<group>"; };
+		F8734E8015D38ADA00642F8B /* Travelbug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Travelbug.m; path = "core-data-classes/Travelbug.m"; sourceTree = "<group>"; };
+		F8734E8215D38ADB00642F8B /* Pocketqueries.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Pocketqueries.h; path = "core-data-classes/Pocketqueries.h"; sourceTree = "<group>"; };
+		F8734E8315D38ADB00642F8B /* Pocketqueries.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Pocketqueries.m; path = "core-data-classes/Pocketqueries.m"; sourceTree = "<group>"; };
+		F8734E8515D38ADB00642F8B /* Cachelog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Cachelog.h; path = "core-data-classes/Cachelog.h"; sourceTree = "<group>"; };
+		F8734E8615D38ADB00642F8B /* Cachelog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Cachelog.m; path = "core-data-classes/Cachelog.m"; sourceTree = "<group>"; };
+		F8734E8B15D38ADB00642F8B /* Waypoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Waypoint.h; path = "core-data-classes/Waypoint.h"; sourceTree = "<group>"; };
+		F8734E8C15D38ADB00642F8B /* Waypoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Waypoint.m; path = "core-data-classes/Waypoint.m"; sourceTree = "<group>"; };
+		F8734E8F15D6A67E00642F8B /* gcdbPQImport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gcdbPQImport.h; sourceTree = "<group>"; };
+		F8734E9015D6A67E00642F8B /* gcdbPQImport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = gcdbPQImport.m; sourceTree = "<group>"; };
+		F8734E9315D7EEA100642F8B /* gcdbXMLUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gcdbXMLUtils.h; sourceTree = "<group>"; };
+		F8734E9415D7EEA100642F8B /* gcdbXMLUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = gcdbXMLUtils.m; sourceTree = "<group>"; };
+		F8734E9915D7F55200642F8B /* NSObject+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Utils.h"; sourceTree = "<group>"; };
+		F8734E9A15D7F55200642F8B /* NSObject+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Utils.m"; sourceTree = "<group>"; };
+		F8734E9C15D7F8AB00642F8B /* gcdbMOCUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gcdbMOCUtils.h; sourceTree = "<group>"; };
+		F8734E9D15D7F8AB00642F8B /* gcdbMOCUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = gcdbMOCUtils.m; sourceTree = "<group>"; };
+		F8734E9F15D809F300642F8B /* gcdbGeocacheUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gcdbGeocacheUtils.h; sourceTree = "<group>"; };
+		F8734EA015D809F300642F8B /* gcdbGeocacheUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = gcdbGeocacheUtils.m; sourceTree = "<group>"; };
+		F8734EA215D85B7D00642F8B /* Userattributes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Userattributes.h; path = "core-data-classes/Userattributes.h"; sourceTree = "<group>"; };
+		F8734EA315D85B7E00642F8B /* Userattributes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Userattributes.m; path = "core-data-classes/Userattributes.m"; sourceTree = "<group>"; };
+		F8C4A00415E42A3500BD0BCB /* gcdbNSView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gcdbNSView.h; sourceTree = "<group>"; };
+		F8C4A00515E42A3500BD0BCB /* gcdbNSView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = gcdbNSView.m; sourceTree = "<group>"; };
 		F8C93F0115CD5102008C53F8 /* osxgcdb.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = osxgcdb.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8C93F0515CD5102008C53F8 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		F8C93F0815CD5102008C53F8 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -103,6 +155,7 @@
 		F8C9456B15CDAF50008C53F8 /* SSZipArchive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SSZipArchive.m; path = ssziparchive/SSZipArchive.m; sourceTree = "<group>"; };
 		F8C9457115CDB053008C53F8 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		F8C9457315CDCD82008C53F8 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		F8FDE1D415E6D8C000F00DFC /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +163,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8FDE1D515E6D8C000F00DFC /* WebKit.framework in Frameworks */,
 				F8C9457215CDB053008C53F8 /* libz.dylib in Frameworks */,
 				F8C93F0615CD5102008C53F8 /* Cocoa.framework in Frameworks */,
 				F8C9455E15CDA8EB008C53F8 /* libGRMustache4-MacOS.a in Frameworks */,
@@ -130,6 +184,59 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F8734E4115D3183100642F8B /* Core Data Model Classes */ = {
+			isa = PBXGroup;
+			children = (
+				F8734EA215D85B7D00642F8B /* Userattributes.h */,
+				F8734EA315D85B7E00642F8B /* Userattributes.m */,
+				F8734E8B15D38ADB00642F8B /* Waypoint.h */,
+				F8734E8C15D38ADB00642F8B /* Waypoint.m */,
+				F8734E8515D38ADB00642F8B /* Cachelog.h */,
+				F8734E8615D38ADB00642F8B /* Cachelog.m */,
+				F8734E8315D38ADB00642F8B /* Pocketqueries.m */,
+				F8734E7F15D38ADA00642F8B /* Travelbug.h */,
+				F8734E8015D38ADA00642F8B /* Travelbug.m */,
+				F8734E7C15D38ADA00642F8B /* PQassignment.h */,
+				F8734E8215D38ADB00642F8B /* Pocketqueries.h */,
+				F8734E7D15D38ADA00642F8B /* PQassignment.m */,
+				F8734E7915D38ADA00642F8B /* GCVote.h */,
+				F8734E7A15D38ADA00642F8B /* GCVote.m */,
+				F8734E7615D38ADA00642F8B /* Details.h */,
+				F8734E7715D38ADA00642F8B /* Details.m */,
+				F8734E7315D38ADA00642F8B /* Childwaypoint.h */,
+				F8734E7415D38ADA00642F8B /* Childwaypoint.m */,
+				F8734E7015D38ADA00642F8B /* Cache.h */,
+				F8734E7115D38ADA00642F8B /* Cache.m */,
+				F8734E6D15D38ADA00642F8B /* Groundspeak_attributes.h */,
+				F8734E6E15D38ADA00642F8B /* Groundspeak_attributes.m */,
+			);
+			name = "Core Data Model Classes";
+			sourceTree = "<group>";
+		};
+		F8734E8E15D6A5BE00642F8B /* File Importing */ = {
+			isa = PBXGroup;
+			children = (
+				F8734E8F15D6A67E00642F8B /* gcdbPQImport.h */,
+				F8734E9015D6A67E00642F8B /* gcdbPQImport.m */,
+			);
+			name = "File Importing";
+			sourceTree = "<group>";
+		};
+		F8734E9215D7EE5E00642F8B /* Ulilities */ = {
+			isa = PBXGroup;
+			children = (
+				F8734E9315D7EEA100642F8B /* gcdbXMLUtils.h */,
+				F8734E9415D7EEA100642F8B /* gcdbXMLUtils.m */,
+				F8734E9915D7F55200642F8B /* NSObject+Utils.h */,
+				F8734E9A15D7F55200642F8B /* NSObject+Utils.m */,
+				F8734E9C15D7F8AB00642F8B /* gcdbMOCUtils.h */,
+				F8734E9D15D7F8AB00642F8B /* gcdbMOCUtils.m */,
+				F8734E9F15D809F300642F8B /* gcdbGeocacheUtils.h */,
+				F8734EA015D809F300642F8B /* gcdbGeocacheUtils.m */,
+			);
+			name = Ulilities;
+			sourceTree = "<group>";
+		};
 		F8C93EF615CD5102008C53F8 = {
 			isa = PBXGroup;
 			children = (
@@ -168,6 +275,7 @@
 		F8C93F0715CD5102008C53F8 /* Other Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F8FDE1D415E6D8C000F00DFC /* WebKit.framework */,
 				F8C93F0815CD5102008C53F8 /* AppKit.framework */,
 				F8C93F0915CD5102008C53F8 /* CoreData.framework */,
 				F8C93F0A15CD5102008C53F8 /* Foundation.framework */,
@@ -178,6 +286,9 @@
 		F8C93F0B15CD5102008C53F8 /* osxgcdb */ = {
 			isa = PBXGroup;
 			children = (
+				F8734E9215D7EE5E00642F8B /* Ulilities */,
+				F8734E8E15D6A5BE00642F8B /* File Importing */,
+				F8734E4115D3183100642F8B /* Core Data Model Classes */,
 				F8C93F4B15CD6FB3008C53F8 /* external-projects */,
 				F8C93F4715CD5134008C53F8 /* osxgcdb.entitlements */,
 				F8C93F1715CD5102008C53F8 /* gcdbAppDelegate.h */,
@@ -185,6 +296,8 @@
 				F8C93F1A15CD5102008C53F8 /* MainMenu.xib */,
 				F8C93F1D15CD5102008C53F8 /* osxgcdb.xcdatamodeld */,
 				F8C93F0C15CD5102008C53F8 /* Supporting Files */,
+				F8C4A00415E42A3500BD0BCB /* gcdbNSView.h */,
+				F8C4A00515E42A3500BD0BCB /* gcdbNSView.m */,
 			);
 			path = osxgcdb;
 			sourceTree = "<group>";
@@ -395,6 +508,23 @@
 				F8C9456E15CDAF50008C53F8 /* unzip.c in Sources */,
 				F8C9456F15CDAF50008C53F8 /* zip.c in Sources */,
 				F8C9457015CDAF50008C53F8 /* SSZipArchive.m in Sources */,
+				F8734E6F15D38ADA00642F8B /* Groundspeak_attributes.m in Sources */,
+				F8734E7215D38ADA00642F8B /* Cache.m in Sources */,
+				F8734E7515D38ADA00642F8B /* Childwaypoint.m in Sources */,
+				F8734E7815D38ADA00642F8B /* Details.m in Sources */,
+				F8734E7B15D38ADA00642F8B /* GCVote.m in Sources */,
+				F8734E7E15D38ADA00642F8B /* PQassignment.m in Sources */,
+				F8734E8115D38ADA00642F8B /* Travelbug.m in Sources */,
+				F8734E8415D38ADB00642F8B /* Pocketqueries.m in Sources */,
+				F8734E8715D38ADB00642F8B /* Cachelog.m in Sources */,
+				F8734E8D15D38ADB00642F8B /* Waypoint.m in Sources */,
+				F8734E9115D6A67E00642F8B /* gcdbPQImport.m in Sources */,
+				F8734E9515D7EEA100642F8B /* gcdbXMLUtils.m in Sources */,
+				F8734E9B15D7F55200642F8B /* NSObject+Utils.m in Sources */,
+				F8734E9E15D7F8AC00642F8B /* gcdbMOCUtils.m in Sources */,
+				F8734EA115D809F300642F8B /* gcdbGeocacheUtils.m in Sources */,
+				F8734EA415D85B8100642F8B /* Userattributes.m in Sources */,
+				F8C4A00615E42A3600BD0BCB /* gcdbNSView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -588,6 +718,7 @@
 				F8C93F4315CD5103008C53F8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F8C93F4415CD5103008C53F8 /* Build configuration list for PBXNativeTarget "osxgcdb" */ = {
 			isa = XCConfigurationList;
@@ -596,6 +727,7 @@
 				F8C93F4615CD5103008C53F8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

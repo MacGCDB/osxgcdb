@@ -23,22 +23,28 @@
 
 #import "gcdbAppDelegate.h"
 
-#import "DDLog.h"
-#import "DDASLLogger.h"
-#import "DDTTYLogger.h"
-#import "DDFileLogger.h"
+
 
 #import "GRMustache.h"
 
 #import "SSZipArchive.h"
 
-static const int ddLogLevel = LOG_LEVEL_INFO; //LOG_LEVEL_VERBOSE
+#import "gcdbPQImport.h"
+
+#define YOUR_STORE_TYPE NSSQLiteStoreType
+#define YOUR_EXTERNAL_RECORD_EXTENSION @"geocacherec"
+
+//static const int ddLogLevel = LOG_LEVEL_INFO; //LOG_LEVEL_VERBOSE
 
 @implementation gcdbAppDelegate
 
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
 @synthesize managedObjectModel = _managedObjectModel;
 @synthesize managedObjectContext = _managedObjectContext;
+
+@synthesize cacheTableView;
+@synthesize webViewDetails;
+
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
@@ -55,12 +61,56 @@ static const int ddLogLevel = LOG_LEVEL_INFO; //LOG_LEVEL_VERBOSE
     
     DDLogInfo(@"Initialized logger.");
     
+    DDLogInfo(@"log file at: %@", [[fileLogger currentLogFileInfo] filePath]);
+    
     NSDictionary *dictionary = [NSDictionary dictionaryWithObject:[NSNumber numberWithInt:2] forKey:@"count"];
     NSString *templateString = @"I have {{count}} arms.";
     NSString *rendering = [GRMustacheTemplate renderObject:dictionary fromString:templateString error:NULL];
     
     DDLogInfo(@"Rendered template: %@", rendering);
     
+//    NSUserNotification *notification = [[NSUserNotification alloc] init];
+//    [notification setTitle:@"Hello World"];
+    //[notification setSubtitle:@"Hi there"];
+//    [notification setActionButtonTitle:@"Yes"];
+//    [notification setHasActionButton:YES];
+//    [notification setInformativeText:@"Hello world message. A very long line with a lot of text. Blah blah."];
+    NSUserNotificationCenter *center = [NSUserNotificationCenter defaultUserNotificationCenter];
+    [center setDelegate:self];
+//    [center deliverNotification:notification];
+    
+}
+
+- (void)userNotificationCenter:(NSUserNotificationCenter *)center didDeliverNotification:(NSUserNotification *)notification {
+   NSLog(@"didDeliverNotification."); 
+}
+
+- (void)userNotificationCenter:(NSUserNotificationCenter *)center didActivateNotification:(NSUserNotification *)notification
+{
+    NSLog(@"didActivateNotification.");
+}
+
+
+- (BOOL)userNotificationCenter:(NSUserNotificationCenter *)center shouldPresentNotification:(NSUserNotification *)notification
+{
+    NSLog(@"shouldPresentNotification");
+    return YES;
+}
+
+
+
+/**
+ Returns the external records directory for the application.
+ This code uses a directory named "osxgcdb" for the content,
+ either in the ~/Library/Caches/Metadata/CoreData location or (if the
+ former cannot be found), the system's temporary directory.
+ */
+
+- (NSString *)externalRecordsDirectory {
+    
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
+    NSString *basePath = ([paths count] > 0) ? [paths objectAtIndex:0] : NSTemporaryDirectory();
+    return [basePath stringByAppendingPathComponent:@"Metadata/CoreData/osxgcdb"];
 }
 
 // Returns the directory the application uses to store the Core Data store file. This code uses a directory named "com.dangermankonsumprodukte.osxgcdb" in the user's Application Support directory.
@@ -125,15 +175,55 @@ static const int ddLogLevel = LOG_LEVEL_INFO; //LOG_LEVEL_VERBOSE
         }
     }
     
-    NSURL *url = [applicationFilesDirectory URLByAppendingPathComponent:@"osxgcdb.storedata"];
+    NSString *externalRecordsDirectory = [self externalRecordsDirectory];
+    if ( ![fileManager fileExistsAtPath:externalRecordsDirectory isDirectory:NULL] ) {
+        if (![fileManager createDirectoryAtPath:externalRecordsDirectory withIntermediateDirectories:YES attributes:nil error:&error]) {
+            DDLogError(@"Error creating external records directory at %@ : %@",externalRecordsDirectory,error);
+            NSAssert2(NO, @"Failed to create external records directory %@ : %@", externalRecordsDirectory,error);
+            DDLogError(@"Error creating external records directory at %@ : %@",externalRecordsDirectory,error);
+            return nil;
+        };
+    }
+    
+    NSURL *url = [applicationFilesDirectory URLByAppendingPathComponent:@"geocaches.osxgcdb"];
+    
+    DDLogInfo(@"Persistent store: %@",  url);
+    
+    NSMutableDictionary *storeOptions = [NSMutableDictionary dictionary];
+    [storeOptions setObject:externalRecordsDirectory forKey:NSExternalRecordsDirectoryOption];
+    [storeOptions setObject:YOUR_EXTERNAL_RECORD_EXTENSION forKey:NSExternalRecordExtensionOption];
+        
+    
     NSPersistentStoreCoordinator *coordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:mom];
-    if (![coordinator addPersistentStoreWithType:NSXMLStoreType configuration:nil URL:url options:nil error:&error]) {
+    if (![coordinator addPersistentStoreWithType:YOUR_STORE_TYPE configuration:nil URL:url options:storeOptions error:&error]) {
         [[NSApplication sharedApplication] presentError:error];
         return nil;
     }
     _persistentStoreCoordinator = coordinator;
     
     return _persistentStoreCoordinator;
+}
+
+// File open 
+
+- (void)application:(NSApplication *)theApplication openFiles:(NSArray *)files {
+    
+    NSString *aPath = [files lastObject]; // Just an example to get at one of the paths.
+    
+    if (aPath && [aPath hasSuffix:YOUR_EXTERNAL_RECORD_EXTENSION]) {
+        // Decode URI from path.
+        NSURL *objectURI = [[NSPersistentStoreCoordinator elementsDerivedFromExternalRecordURL:[NSURL fileURLWithPath:aPath]] objectForKey:NSObjectURIKey];
+        if (objectURI) {
+            NSManagedObjectID *moid = [[self persistentStoreCoordinator] managedObjectIDForURIRepresentation:objectURI];
+            if (moid) {
+                NSManagedObject *mo = [[self managedObjectContext] objectWithID:moid];
+                
+                // Your code to select the object in your application's UI.
+                
+                DDLogInfo(@"Received file open commend: %@", aPath);
+            }
+        }
+    }
 }
 
 // Returns the managed object context for the application (which is already bound to the persistent store coordinator for the application.) 
@@ -152,7 +242,7 @@ static const int ddLogLevel = LOG_LEVEL_INFO; //LOG_LEVEL_VERBOSE
         [[NSApplication sharedApplication] presentError:error];
         return nil;
     }
-    _managedObjectContext = [[NSManagedObjectContext alloc] init];
+    _managedObjectContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
     [_managedObjectContext setPersistentStoreCoordinator:coordinator];
 
     return _managedObjectContext;
@@ -176,6 +266,40 @@ static const int ddLogLevel = LOG_LEVEL_INFO; //LOG_LEVEL_VERBOSE
     if (![[self managedObjectContext] save:&error]) {
         [[NSApplication sharedApplication] presentError:error];
     }
+}
+
+
+// Import Pocket Query
+
+- (IBAction)importPocketQueryAction:(id)sender {
+    
+    NSOpenPanel *op = [NSOpenPanel openPanel];
+	NSArray* fileTypes = [[NSArray alloc] initWithObjects:@"zip", @"ZIP", @"gpx", @"GPX", nil];
+	
+	[op setCanChooseDirectories:NO];
+    [op setCanChooseFiles:YES];
+    [op setAllowsMultipleSelection:YES];
+	
+	[op setAllowedFileTypes:fileTypes];
+	
+    [op setTitle:@"Select Pocket Queries to Import"];
+    [op setPrompt:@"Select"];
+	
+	NSInteger result = [op runModal];
+	
+	
+	if (result == NSOKButton){
+		
+		NSArray* fileNames = [op URLs];
+                
+		// Starts a new thread:
+		[gcdbPQImport importPqFiles:fileNames appDelegate:self];
+		
+	}
+    
+    
+
+    
 }
 
 - (NSApplicationTerminateReply)applicationShouldTerminate:(NSApplication *)sender

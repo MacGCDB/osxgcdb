@@ -1,4 +1,122 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model name="untitled.xcdatamodel" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
-    <elements/>
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1487" systemVersion="12A269" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Cache" representedClassName="Cache" parentEntity="Waypoint" syncable="YES">
+        <attribute name="guid" optional="YES" attributeType="String" maxValueString="36" indexed="YES" storedInTruthFile="YES" syncable="YES"/>
+        <relationship name="relChild" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Childwaypoint" inverseName="relParent" inverseEntity="Childwaypoint" syncable="YES"/>
+        <relationship name="relDetails" optional="YES" minCount="1" maxCount="1" deletionRule="Cascade" destinationEntity="Details" inverseName="relCache" inverseEntity="Details" syncable="YES"/>
+        <relationship name="relPQ" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="PQassignment" inverseName="relCache" inverseEntity="PQassignment" syncable="YES"/>
+        <relationship name="relVote" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="GCVote" inverseName="relCache" inverseEntity="GCVote" syncable="YES"/>
+    </entity>
+    <entity name="Cachelog" representedClassName="Cachelog" syncable="YES">
+        <attribute name="groundspeak_date" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="groundspeak_finder" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="groundspeak_finder_id" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="groundspeak_log_id" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="groundspeak_text" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="groundspeak_text_encoded" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="groundspeak_type" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="relDetails" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Details" inverseName="relLogs" inverseEntity="Details" syncable="YES"/>
+    </entity>
+    <entity name="Childwaypoint" representedClassName="Childwaypoint" parentEntity="Waypoint" syncable="YES">
+        <attribute name="cmt" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="relParent" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Cache" inverseName="relChild" inverseEntity="Cache" syncable="YES"/>
+    </entity>
+    <entity name="Details" representedClassName="Details" syncable="YES">
+        <attribute name="archived" optional="YES" attributeType="String" defaultValueString="False" syncable="YES"/>
+        <attribute name="available" optional="YES" attributeType="String" defaultValueString="True" syncable="YES"/>
+        <attribute name="groundspeak_container" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="groundspeak_country" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="groundspeak_difficulty" optional="YES" attributeType="Float" maxValueString="5" defaultValueString="1" syncable="YES"/>
+        <attribute name="groundspeak_encoded_hints" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="groundspeak_long_description" optional="YES" attributeType="String" spotlightIndexingEnabled="YES" syncable="YES"/>
+        <attribute name="groundspeak_long_description_html" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="groundspeak_name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="groundspeak_owner" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="groundspeak_owner_id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="groundspeak_placed_by" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="groundspeak_short_description" optional="YES" attributeType="String" spotlightIndexingEnabled="YES" syncable="YES"/>
+        <attribute name="groundspeak_short_description_html" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="groundspeak_state" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="groundspeak_terrain" optional="YES" attributeType="Float" maxValueString="5" defaultValueString="1" syncable="YES"/>
+        <attribute name="groundspeak_type" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="relCache" optional="YES" minCount="1" maxCount="1" deletionRule="Cascade" destinationEntity="Cache" inverseName="relDetails" inverseEntity="Cache" syncable="YES"/>
+        <relationship name="relGroundspeakAttributes" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Groundspeak_attributes" inverseName="relDetails" inverseEntity="Groundspeak_attributes" syncable="YES"/>
+        <relationship name="relLogs" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Cachelog" inverseName="relDetails" inverseEntity="Cachelog" syncable="YES"/>
+        <relationship name="relTravelBugs" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Travelbug" inverseName="relDetails" inverseEntity="Travelbug" syncable="YES"/>
+        <relationship name="relUserAttributes" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Userattributes" inverseName="relDetails" inverseEntity="Userattributes" syncable="YES"/>
+    </entity>
+    <entity name="GCVote" representedClassName="GCVote" syncable="YES">
+        <attribute name="count" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="distribution" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="guid" optional="YES" attributeType="String" maxValueString="36" indexed="YES" syncable="YES"/>
+        <attribute name="voteAverage" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="voteMedian" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <relationship name="relCache" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Cache" inverseName="relVote" inverseEntity="Cache" syncable="YES"/>
+    </entity>
+    <entity name="Groundspeak_attributes" representedClassName="Groundspeak_attributes" syncable="YES">
+        <attribute name="groundspeak_attribute" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="groundspeak_attribute_id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="groundspeak_attribute_inc" optional="YES" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
+        <attribute name="yesNoAttribute" optional="YES" transient="YES" attributeType="String" syncable="YES"/>
+        <relationship name="relDetails" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Details" inverseName="relGroundspeakAttributes" inverseEntity="Details" syncable="YES"/>
+    </entity>
+    <entity name="Pocketqueries" representedClassName="Pocketqueries" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="pqname" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="updated" optional="YES" attributeType="Date" indexed="YES" syncable="YES"/>
+        <relationship name="relPQassignment" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="PQassignment" inverseName="relPocketquery" inverseEntity="PQassignment" syncable="YES"/>
+    </entity>
+    <entity name="PQassignment" representedClassName="PQassignment" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <relationship name="relCache" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Cache" inverseName="relPQ" inverseEntity="Cache" syncable="YES"/>
+        <relationship name="relPocketquery" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Pocketqueries" inverseName="relPQassignment" inverseEntity="Pocketqueries" syncable="YES"/>
+    </entity>
+    <entity name="Travelbug" representedClassName="Travelbug" syncable="YES">
+        <attribute name="groundspeak_travelbug_id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="groundspeak_travelbug_name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="groundspeak_travelbug_ref" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="relDetails" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Details" inverseName="relTravelBugs" inverseEntity="Details" syncable="YES"/>
+    </entity>
+    <entity name="Userattributes" representedClassName="Userattributes" syncable="YES">
+        <attribute name="userflag" optional="YES" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
+        <attribute name="usernote" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="waypoint_name" optional="YES" attributeType="String" maxValueString="20" indexed="YES" syncable="YES"/>
+        <relationship name="relDetails" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Details" inverseName="relUserAttributes" inverseEntity="Details" syncable="YES"/>
+    </entity>
+    <entity name="Waypoint" representedClassName="Waypoint" isAbstract="YES" syncable="YES">
+        <attribute name="coordinates" optional="YES" transient="YES" attributeType="String" syncable="YES"/>
+        <attribute name="desc" optional="YES" attributeType="String" spotlightIndexingEnabled="YES" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="String" maxValueString="20" indexed="YES" spotlightIndexingEnabled="YES" syncable="YES"/>
+        <attribute name="lat" optional="YES" attributeType="Double" defaultValueString="0.0" indexed="YES" syncable="YES"/>
+        <attribute name="latlonUserModified" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="latOrg" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="lon" optional="YES" attributeType="Double" defaultValueString="0.0" indexed="YES" syncable="YES"/>
+        <attribute name="lonOrg" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" maxValueString="20" indexed="YES" syncable="YES"/>
+        <attribute name="sym" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="symPictogram" optional="YES" transient="YES" attributeType="String" syncable="YES"/>
+        <attribute name="time" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="updated" optional="YES" attributeType="Date" indexed="YES" syncable="YES"/>
+        <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="urlname" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <fetchRequest name="fetchLogById" entity="Cachelog" predicateString="groundspeak_log_id == $LOG_ID"/>
+    <fetchRequest name="fetchOutdatedCaches" entity="Cache" predicateString="ANY relpq.relpocketquery.id == $POCKET_QUERY AND updated &lt; $UPDATED"/>
+    <fetchRequest name="fetchUserAttributesForName" entity="Userattributes" predicateString="waypoint_name == $WAYPOINT_NAME"/>
+    <fetchRequest name="fetchWaypoint" entity="Waypoint" predicateString="name == $WAYPOINTNAME"/>
+    <elements>
+        <element name="Cache" positionX="0" positionY="0" width="128" height="118"/>
+        <element name="Cachelog" positionX="0" positionY="0" width="128" height="163"/>
+        <element name="Childwaypoint" positionX="0" positionY="0" width="128" height="73"/>
+        <element name="Details" positionX="0" positionY="0" width="128" height="373"/>
+        <element name="GCVote" positionX="0" positionY="0" width="128" height="133"/>
+        <element name="Groundspeak_attributes" positionX="0" positionY="0" width="128" height="118"/>
+        <element name="Pocketqueries" positionX="0" positionY="0" width="128" height="103"/>
+        <element name="PQassignment" positionX="0" positionY="0" width="128" height="103"/>
+        <element name="Travelbug" positionX="0" positionY="0" width="128" height="103"/>
+        <element name="Userattributes" positionX="0" positionY="0" width="128" height="103"/>
+        <element name="Waypoint" positionX="0" positionY="0" width="128" height="283"/>
+    </elements>
 </model>

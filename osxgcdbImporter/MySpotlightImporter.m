@@ -24,7 +24,10 @@
 
 #import "MySpotlightImporter.h"
 
-#define YOUR_STORE_TYPE NSXMLStoreType
+#import "Cache.h"
+#import "Details.h"
+
+#define YOUR_STORE_TYPE NSSQLiteStoreType
 
 @interface MySpotlightImporter ()
 @property (nonatomic, strong) NSURL *modelURL;
@@ -39,7 +42,9 @@
 
 - (BOOL)importFileAtPath:(NSString *)filePath attributes:(NSMutableDictionary *)spotlightData error:(NSError **)error
 {
-        
+
+    NSLog(@"importFileAtPath");
+    
     NSDictionary *pathInfo = [NSPersistentStoreCoordinator elementsDerivedFromExternalRecordURL:[NSURL fileURLWithPath:filePath]];
             
     self.modelURL = [NSURL fileURLWithPath:[pathInfo valueForKey:NSModelPathKey]];
@@ -58,11 +63,25 @@
 
     // how you process each instance will depend on the entity that the instance belongs to
 
-    if ([[[instance entity] name] isEqualToString:@"YOUR_ENTITY_NAME"]) {
+    if ([[[instance entity] name] isEqualToString:@"Cache"]) {
+        
+        
+        
+        
 
         // set the display name for Spotlight search result
 
-        NSString *yourDisplayString =  [NSString stringWithFormat:@"YOUR_DISPLAY_STRING %@", [instance valueForKey:@"SOME_KEY"]];
+        //NSString *yourDisplayString =  [NSString stringWithFormat:@"YOUR_DISPLAY_STRING %@", [instance valueForKey:@"SOME_KEY"]];
+        
+        Details *cacheDetails = [instance valueForKey:@"relDetails"];
+        
+        NSString *cacheName = [cacheDetails groundspeak_name];
+        
+        NSString *yourDisplayString =  [NSString stringWithFormat:@"GC%@ %@",[instance valueForKey:@"id"], cacheName];
+        
+        NSLog(@"Cache display name 2 %@", yourDisplayString);
+        
+        
         spotlightData[(NSString *)kMDItemDisplayName] = yourDisplayString;
         
          /*
@@ -76,6 +95,14 @@
             ... more property values;
             To determine if a property should be indexed, call isIndexedBySpotlight
          */
+        
+        
+        NSString *longDescription =  [cacheDetails groundspeak_long_description];
+        
+        [spotlightData setObject:longDescription forKey:(NSString *)kMDItemTextContent];
+        
+        NSLog(@"Finished.");
+        
     }
 
     return YES;
@@ -88,6 +115,9 @@ static NSDate				*cachedModelModificationDate =nil;
 // Returns the managed object model. The last read model is cached in a global variable and reused if the URL and modification date are identical
 - (NSManagedObjectModel *)managedObjectModel
 {
+    NSLog(@"NSManagedObjectModel");
+
+    
     if (_managedObjectModel != nil)
         return _managedObjectModel;
 	

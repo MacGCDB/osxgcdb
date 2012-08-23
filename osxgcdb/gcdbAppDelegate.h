@@ -22,8 +22,21 @@
 //  along with osxgcdb.  If not, see <http://www.gnu.org/licenses/>.
 
 #import <Cocoa/Cocoa.h>
+#import <WebKit/WebKit.h>
 
-@interface gcdbAppDelegate : NSObject <NSApplicationDelegate>
+@interface gcdbAppDelegate : NSObject <NSApplicationDelegate, NSUserNotificationCenterDelegate> {
+
+    NSPersistentStoreCoordinator *persistentStoreCoordinator;
+    NSManagedObjectModel *managedObjectModel;
+    NSManagedObjectContext *managedObjectContext;
+	
+	NSTableView * cacheTableView;
+	
+	IBOutlet NSArrayController *Caches;
+    
+    IBOutlet WebView *webViewDetails;
+
+}
 
 @property (assign) IBOutlet NSWindow *window;
 
@@ -31,6 +44,14 @@
 @property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
 @property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 
+@property (strong) IBOutlet NSTableView * cacheTableView;
+@property (strong) IBOutlet WebView * webViewDetails;
+
+
 - (IBAction)saveAction:(id)sender;
+
+- (IBAction)importPocketQueryAction:(id)sender;
+
+- (NSURL *)applicationFilesDirectory;
 
 @end
