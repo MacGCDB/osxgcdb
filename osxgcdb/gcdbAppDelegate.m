@@ -23,13 +23,17 @@
 
 #import "gcdbAppDelegate.h"
 
-
-
 #import "GRMustache.h"
-
 #import "SSZipArchive.h"
 
+#import "gcdbCacheFoundImageTransformer.h"
 #import "gcdbPQImport.h"
+#import "Cache.h"
+#import "Cache+categories.h"
+#import "Details.h"
+#import "Cachelog.h"
+#import "gcdbPreferenceController.h"
+#import "gcdbStaticCoordinates.h"
 
 #define YOUR_STORE_TYPE NSSQLiteStoreType
 #define YOUR_EXTERNAL_RECORD_EXTENSION @"geocacherec"
@@ -43,12 +47,19 @@
 @synthesize managedObjectContext = _managedObjectContext;
 
 @synthesize cacheTableView;
+@synthesize logsTableView;
 @synthesize webViewDetails;
+@synthesize cachePopover;
+@synthesize togglePopoverButton;
+
+gcdbPreferenceController *preferenceController;
 
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
     // Insert code here to initialize your application
+    
+    [gcdbStaticCoordinates setDefaultHomeCoordinates];
     
     [DDLog addLogger:[DDASLLogger sharedInstance]];
     [DDLog addLogger:[DDTTYLogger sharedInstance]];
@@ -68,16 +79,9 @@
     NSString *rendering = [GRMustacheTemplate renderObject:dictionary fromString:templateString error:NULL];
     
     DDLogInfo(@"Rendered template: %@", rendering);
-    
-//    NSUserNotification *notification = [[NSUserNotification alloc] init];
-//    [notification setTitle:@"Hello World"];
-    //[notification setSubtitle:@"Hi there"];
-//    [notification setActionButtonTitle:@"Yes"];
-//    [notification setHasActionButton:YES];
-//    [notification setInformativeText:@"Hello world message. A very long line with a lot of text. Blah blah."];
+
     NSUserNotificationCenter *center = [NSUserNotificationCenter defaultUserNotificationCenter];
     [center setDelegate:self];
-//    [center deliverNotification:notification];
     
 }
 
@@ -346,6 +350,123 @@
     }
 
     return NSTerminateNow;
+}
+
+// This will be called once on the initial selection
+// twice thereafter.
+- (void)tableViewSelectionDidChange:(NSNotification *)aNotification{
+	
+    DDLogVerbose(@"Table view selection changed called.");
+	
+    if ([aNotification object] == cacheTableView) {
+        
+        NSString *htmlString;
+        
+        NSArray *selectedWaypoints = [Caches selectedObjects];
+        
+        if ([selectedWaypoints count] < 2) {
+            
+            if ([selectedWaypoints count] == 0) {
+                
+                htmlString = @"Select a cache";
+                
+                [cachePopover close];
+                
+            } else {
+                
+                Cache *wpt = [selectedWaypoints objectAtIndex:0];
+                
+                htmlString = [wpt htmlDescription];
+                
+                DDLogVerbose(@"Table view %@.", [wpt desc]);
+                
+                if ([selectedWaypoints count] == 1 && [togglePopoverButton state] == NSOnState) {
+                    
+                    [cachePopover showRelativeToRect:[cacheTableView rectOfRow:[cacheTableView selectedRow]]
+                                              ofView:cacheTableView
+                                       preferredEdge:NSMaxXEdge];
+                    
+                } else {
+                    [cachePopover close];
+                }
+                
+            }
+            
+            NSLog(@"Before webview");
+            
+            
+            [[webViewDetails mainFrame] loadHTMLString:htmlString baseURL:nil];
+            
+            NSLog(@"After webview");
+            
+            
+        }
+        
+    }
+	
+}
+
+- (CGFloat)tableView:(NSTableView *)tableView heightOfRow:(NSInteger)row {
+    
+    if (tableView == logsTableView) {
+        
+        NSArray *selectedWaypoints = [Caches selectedObjects];
+        
+        if ([selectedWaypoints count] == 1) {
+            
+            // Wrap for log text column:
+            NSTableColumn *column = [tableView tableColumnWithIdentifier:@"logtext"];
+            
+            CGFloat columnWidth = [column width];
+            
+            NSCell *cell = [[column dataCellForRow:row] copyWithZone:NULL];
+            
+            [cell setWraps:YES]; // Has to be set to allow word-wrapping calculation
+            
+            Cachelog *log = [[Cachelogs arrangedObjects] objectAtIndex:row];
+            
+            [cell setStringValue:[log groundspeak_text]];
+            
+            CGFloat cellHeight = [cell cellSizeForBounds:NSMakeRect(0.0, 0.0, columnWidth, 10000.0)].height+10.0;
+            
+            return  MAX(cellHeight * 1.5, 90);
+            
+        }
+    }
+    
+    return [tableView rowHeight];  // Return default value
+    
+}
+
+- (IBAction)togglePopoverButtonSelect:(id)sender {
+
+    if ([togglePopoverButton state] == NSOnState) {
+        
+        [self tableViewSelectionDidChange:[NSNotification notificationWithName:@"togglePopoverButton" object:cacheTableView]];
+        
+    } else {
+        [cachePopover close];
+    }
+
+}
+
+- (NSArray *)logsSortDescriptors {
+    return [NSArray arrayWithObject:
+            [NSSortDescriptor sortDescriptorWithKey:@"groundspeak_date"
+                                          ascending:NO]];
+}
+
+-(IBAction)showPreferences:(id)sender{
+	
+	if(!preferenceController)
+		preferenceController = [[gcdbPreferenceController alloc] init];
+	
+	NSWindow* prefWindow = [preferenceController window];
+	
+	[preferenceController showWindow:self];
+	
+	[prefWindow makeKeyWindow];
+	
 }
 
 @end

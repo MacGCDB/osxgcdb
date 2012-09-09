@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F8106DF315F69ECA00E31F8F /* Waypoint+Categories.m in Sources */ = {isa = PBXBuildFile; fileRef = F8106DF215F69ECA00E31F8F /* Waypoint+Categories.m */; };
+		F8106DF715F69FC200E31F8F /* gcdbCoordinateUitls.m in Sources */ = {isa = PBXBuildFile; fileRef = F8106DF615F69FC200E31F8F /* gcdbCoordinateUitls.m */; };
+		F8106DFA15F6A12300E31F8F /* gcdbStaticCoordinates.m in Sources */ = {isa = PBXBuildFile; fileRef = F8106DF915F6A12300E31F8F /* gcdbStaticCoordinates.m */; };
+		F858DD4215F25EA600DFAC6E /* Userattributes+categories.m in Sources */ = {isa = PBXBuildFile; fileRef = F858DD4115F25EA600DFAC6E /* Userattributes+categories.m */; };
+		F865BBBF15F37FA7000DEF1A /* cache-found.png in Resources */ = {isa = PBXBuildFile; fileRef = F865BBBE15F37FA7000DEF1A /* cache-found.png */; };
+		F865BBC315F3AB59000DEF1A /* gcdbCacheFoundImageTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = F865BBC215F3AB59000DEF1A /* gcdbCacheFoundImageTransformer.m */; };
 		F8734E6F15D38ADA00642F8B /* Groundspeak_attributes.m in Sources */ = {isa = PBXBuildFile; fileRef = F8734E6E15D38ADA00642F8B /* Groundspeak_attributes.m */; };
 		F8734E7215D38ADA00642F8B /* Cache.m in Sources */ = {isa = PBXBuildFile; fileRef = F8734E7115D38ADA00642F8B /* Cache.m */; };
 		F8734E7515D38ADA00642F8B /* Childwaypoint.m in Sources */ = {isa = PBXBuildFile; fileRef = F8734E7415D38ADA00642F8B /* Childwaypoint.m */; };
@@ -23,6 +29,11 @@
 		F8734E9E15D7F8AC00642F8B /* gcdbMOCUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = F8734E9D15D7F8AB00642F8B /* gcdbMOCUtils.m */; };
 		F8734EA115D809F300642F8B /* gcdbGeocacheUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = F8734EA015D809F300642F8B /* gcdbGeocacheUtils.m */; };
 		F8734EA415D85B8100642F8B /* Userattributes.m in Sources */ = {isa = PBXBuildFile; fileRef = F8734EA315D85B7E00642F8B /* Userattributes.m */; };
+		F88D1B3315F54ED40001C42D /* Pocketqueries+categories.m in Sources */ = {isa = PBXBuildFile; fileRef = F88D1B3215F54ED40001C42D /* Pocketqueries+categories.m */; };
+		F8A0B25815FBF4A800513D00 /* gcdbPreferenceController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8A0B25615FBF4A800513D00 /* gcdbPreferenceController.m */; };
+		F8A0B25915FBF4A800513D00 /* gcdbPreferenceController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8A0B25715FBF4A800513D00 /* gcdbPreferenceController.xib */; };
+		F8A0B25F15FC0B3300513D00 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8A0B25E15FC0B3300513D00 /* CoreLocation.framework */; };
+		F8A831A215F22555000E65A3 /* flag-red.icns in Resources */ = {isa = PBXBuildFile; fileRef = F8A831A115F22555000E65A3 /* flag-red.icns */; };
 		F8C4A00615E42A3600BD0BCB /* gcdbNSView.m in Sources */ = {isa = PBXBuildFile; fileRef = F8C4A00515E42A3500BD0BCB /* gcdbNSView.m */; };
 		F8C93F0615CD5102008C53F8 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8C93F0515CD5102008C53F8 /* Cocoa.framework */; };
 		F8C93F1015CD5102008C53F8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F8C93F0E15CD5102008C53F8 /* InfoPlist.strings */; };
@@ -54,6 +65,9 @@
 		F8C9457015CDAF50008C53F8 /* SSZipArchive.m in Sources */ = {isa = PBXBuildFile; fileRef = F8C9456B15CDAF50008C53F8 /* SSZipArchive.m */; };
 		F8C9457215CDB053008C53F8 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F8C9457115CDB053008C53F8 /* libz.dylib */; };
 		F8C9457415CDCD82008C53F8 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = F8C9457315CDCD82008C53F8 /* LICENSE */; };
+		F8D51E3615F2B0A100ABC53B /* flag-red-16x16.png in Resources */ = {isa = PBXBuildFile; fileRef = F8D51E3515F2B0A100ABC53B /* flag-red-16x16.png */; };
+		F8D6622415E8DA34003B0254 /* Cache+categories.m in Sources */ = {isa = PBXBuildFile; fileRef = F8D6622315E8DA34003B0254 /* Cache+categories.m */; };
+		F8EC55D715F2B9D4005F35FD /* flag-off-16x16.png in Resources */ = {isa = PBXBuildFile; fileRef = F8EC55D615F2B9D4005F35FD /* flag-off-16x16.png */; };
 		F8FDE1D515E6D8C000F00DFC /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8FDE1D415E6D8C000F00DFC /* WebKit.framework */; };
 /* End PBXBuildFile section */
 
@@ -68,6 +82,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F8106DF115F69ECA00E31F8F /* Waypoint+Categories.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Waypoint+Categories.h"; path = "core-data-classes/Waypoint+Categories.h"; sourceTree = "<group>"; };
+		F8106DF215F69ECA00E31F8F /* Waypoint+Categories.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Waypoint+Categories.m"; path = "core-data-classes/Waypoint+Categories.m"; sourceTree = "<group>"; };
+		F8106DF515F69FC200E31F8F /* gcdbCoordinateUitls.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gcdbCoordinateUitls.h; sourceTree = "<group>"; };
+		F8106DF615F69FC200E31F8F /* gcdbCoordinateUitls.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = gcdbCoordinateUitls.m; sourceTree = "<group>"; };
+		F8106DF815F6A12300E31F8F /* gcdbStaticCoordinates.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gcdbStaticCoordinates.h; sourceTree = "<group>"; };
+		F8106DF915F6A12300E31F8F /* gcdbStaticCoordinates.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = gcdbStaticCoordinates.m; sourceTree = "<group>"; };
+		F858DD4015F25EA600DFAC6E /* Userattributes+categories.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Userattributes+categories.h"; path = "core-data-classes/Userattributes+categories.h"; sourceTree = "<group>"; };
+		F858DD4115F25EA600DFAC6E /* Userattributes+categories.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Userattributes+categories.m"; path = "core-data-classes/Userattributes+categories.m"; sourceTree = "<group>"; };
+		F865BBBE15F37FA7000DEF1A /* cache-found.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "cache-found.png"; path = "artwork/cache-found.png"; sourceTree = "<group>"; };
+		F865BBC115F3AB59000DEF1A /* gcdbCacheFoundImageTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gcdbCacheFoundImageTransformer.h; sourceTree = "<group>"; };
+		F865BBC215F3AB59000DEF1A /* gcdbCacheFoundImageTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = gcdbCacheFoundImageTransformer.m; sourceTree = "<group>"; };
 		F8734E6D15D38ADA00642F8B /* Groundspeak_attributes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Groundspeak_attributes.h; path = "core-data-classes/Groundspeak_attributes.h"; sourceTree = "<group>"; };
 		F8734E6E15D38ADA00642F8B /* Groundspeak_attributes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Groundspeak_attributes.m; path = "core-data-classes/Groundspeak_attributes.m"; sourceTree = "<group>"; };
 		F8734E7015D38ADA00642F8B /* Cache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Cache.h; path = "core-data-classes/Cache.h"; sourceTree = "<group>"; };
@@ -100,6 +125,13 @@
 		F8734EA015D809F300642F8B /* gcdbGeocacheUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = gcdbGeocacheUtils.m; sourceTree = "<group>"; };
 		F8734EA215D85B7D00642F8B /* Userattributes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Userattributes.h; path = "core-data-classes/Userattributes.h"; sourceTree = "<group>"; };
 		F8734EA315D85B7E00642F8B /* Userattributes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Userattributes.m; path = "core-data-classes/Userattributes.m"; sourceTree = "<group>"; };
+		F88D1B3115F54ED40001C42D /* Pocketqueries+categories.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Pocketqueries+categories.h"; path = "core-data-classes/Pocketqueries+categories.h"; sourceTree = "<group>"; };
+		F88D1B3215F54ED40001C42D /* Pocketqueries+categories.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Pocketqueries+categories.m"; path = "core-data-classes/Pocketqueries+categories.m"; sourceTree = "<group>"; };
+		F8A0B25515FBF4A800513D00 /* gcdbPreferenceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gcdbPreferenceController.h; sourceTree = "<group>"; };
+		F8A0B25615FBF4A800513D00 /* gcdbPreferenceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = gcdbPreferenceController.m; sourceTree = "<group>"; };
+		F8A0B25715FBF4A800513D00 /* gcdbPreferenceController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = gcdbPreferenceController.xib; sourceTree = "<group>"; };
+		F8A0B25E15FC0B3300513D00 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		F8A831A115F22555000E65A3 /* flag-red.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = "flag-red.icns"; path = "artwork/flag-red.icns"; sourceTree = "<group>"; };
 		F8C4A00415E42A3500BD0BCB /* gcdbNSView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gcdbNSView.h; sourceTree = "<group>"; };
 		F8C4A00515E42A3500BD0BCB /* gcdbNSView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = gcdbNSView.m; sourceTree = "<group>"; };
 		F8C93F0115CD5102008C53F8 /* osxgcdb.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = osxgcdb.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -155,6 +187,10 @@
 		F8C9456B15CDAF50008C53F8 /* SSZipArchive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SSZipArchive.m; path = ssziparchive/SSZipArchive.m; sourceTree = "<group>"; };
 		F8C9457115CDB053008C53F8 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		F8C9457315CDCD82008C53F8 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		F8D51E3515F2B0A100ABC53B /* flag-red-16x16.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "flag-red-16x16.png"; path = "artwork/flag-red-16x16.png"; sourceTree = "<group>"; };
+		F8D6622215E8DA34003B0254 /* Cache+categories.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Cache+categories.h"; path = "core-data-classes/Cache+categories.h"; sourceTree = "<group>"; };
+		F8D6622315E8DA34003B0254 /* Cache+categories.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Cache+categories.m"; path = "core-data-classes/Cache+categories.m"; sourceTree = "<group>"; };
+		F8EC55D615F2B9D4005F35FD /* flag-off-16x16.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "flag-off-16x16.png"; path = "artwork/flag-off-16x16.png"; sourceTree = "<group>"; };
 		F8FDE1D415E6D8C000F00DFC /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -163,6 +199,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8A0B25F15FC0B3300513D00 /* CoreLocation.framework in Frameworks */,
 				F8FDE1D515E6D8C000F00DFC /* WebKit.framework in Frameworks */,
 				F8C9457215CDB053008C53F8 /* libz.dylib in Frameworks */,
 				F8C93F0615CD5102008C53F8 /* Cocoa.framework in Frameworks */,
@@ -193,11 +230,11 @@
 				F8734E8C15D38ADB00642F8B /* Waypoint.m */,
 				F8734E8515D38ADB00642F8B /* Cachelog.h */,
 				F8734E8615D38ADB00642F8B /* Cachelog.m */,
+				F8734E8215D38ADB00642F8B /* Pocketqueries.h */,
 				F8734E8315D38ADB00642F8B /* Pocketqueries.m */,
 				F8734E7F15D38ADA00642F8B /* Travelbug.h */,
 				F8734E8015D38ADA00642F8B /* Travelbug.m */,
 				F8734E7C15D38ADA00642F8B /* PQassignment.h */,
-				F8734E8215D38ADB00642F8B /* Pocketqueries.h */,
 				F8734E7D15D38ADA00642F8B /* PQassignment.m */,
 				F8734E7915D38ADA00642F8B /* GCVote.h */,
 				F8734E7A15D38ADA00642F8B /* GCVote.m */,
@@ -209,6 +246,14 @@
 				F8734E7115D38ADA00642F8B /* Cache.m */,
 				F8734E6D15D38ADA00642F8B /* Groundspeak_attributes.h */,
 				F8734E6E15D38ADA00642F8B /* Groundspeak_attributes.m */,
+				F8D6622215E8DA34003B0254 /* Cache+categories.h */,
+				F8D6622315E8DA34003B0254 /* Cache+categories.m */,
+				F858DD4015F25EA600DFAC6E /* Userattributes+categories.h */,
+				F858DD4115F25EA600DFAC6E /* Userattributes+categories.m */,
+				F88D1B3115F54ED40001C42D /* Pocketqueries+categories.h */,
+				F88D1B3215F54ED40001C42D /* Pocketqueries+categories.m */,
+				F8106DF115F69ECA00E31F8F /* Waypoint+Categories.h */,
+				F8106DF215F69ECA00E31F8F /* Waypoint+Categories.m */,
 			);
 			name = "Core Data Model Classes";
 			sourceTree = "<group>";
@@ -222,7 +267,7 @@
 			name = "File Importing";
 			sourceTree = "<group>";
 		};
-		F8734E9215D7EE5E00642F8B /* Ulilities */ = {
+		F8734E9215D7EE5E00642F8B /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
 				F8734E9315D7EEA100642F8B /* gcdbXMLUtils.h */,
@@ -233,13 +278,41 @@
 				F8734E9D15D7F8AB00642F8B /* gcdbMOCUtils.m */,
 				F8734E9F15D809F300642F8B /* gcdbGeocacheUtils.h */,
 				F8734EA015D809F300642F8B /* gcdbGeocacheUtils.m */,
+				F865BBC115F3AB59000DEF1A /* gcdbCacheFoundImageTransformer.h */,
+				F865BBC215F3AB59000DEF1A /* gcdbCacheFoundImageTransformer.m */,
+				F8106DF515F69FC200E31F8F /* gcdbCoordinateUitls.h */,
+				F8106DF615F69FC200E31F8F /* gcdbCoordinateUitls.m */,
+				F8106DF815F6A12300E31F8F /* gcdbStaticCoordinates.h */,
+				F8106DF915F6A12300E31F8F /* gcdbStaticCoordinates.m */,
 			);
-			name = Ulilities;
+			name = Utilities;
+			sourceTree = "<group>";
+		};
+		F8A0B25115FBF10400513D00 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				F8A0B25515FBF4A800513D00 /* gcdbPreferenceController.h */,
+				F8A0B25615FBF4A800513D00 /* gcdbPreferenceController.m */,
+				F8A0B25715FBF4A800513D00 /* gcdbPreferenceController.xib */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		F8A8319F15F22543000E65A3 /* Artwork */ = {
+			isa = PBXGroup;
+			children = (
+				F865BBBE15F37FA7000DEF1A /* cache-found.png */,
+				F8EC55D615F2B9D4005F35FD /* flag-off-16x16.png */,
+				F8D51E3515F2B0A100ABC53B /* flag-red-16x16.png */,
+				F8A831A115F22555000E65A3 /* flag-red.icns */,
+			);
+			name = Artwork;
 			sourceTree = "<group>";
 		};
 		F8C93EF615CD5102008C53F8 = {
 			isa = PBXGroup;
 			children = (
+				F8A8319F15F22543000E65A3 /* Artwork */,
 				F8C9457315CDCD82008C53F8 /* LICENSE */,
 				F8C9457115CDB053008C53F8 /* libz.dylib */,
 				F8C93F4815CD6923008C53F8 /* macgcdb.icns */,
@@ -262,6 +335,7 @@
 		F8C93F0415CD5102008C53F8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F8A0B25E15FC0B3300513D00 /* CoreLocation.framework */,
 				F8C93F0515CD5102008C53F8 /* Cocoa.framework */,
 				F8C93F2815CD5103008C53F8 /* CoreServices.framework */,
 				F8C93F2A15CD5103008C53F8 /* CoreFoundation.framework */,
@@ -286,15 +360,16 @@
 		F8C93F0B15CD5102008C53F8 /* osxgcdb */ = {
 			isa = PBXGroup;
 			children = (
-				F8734E9215D7EE5E00642F8B /* Ulilities */,
+				F8734E9215D7EE5E00642F8B /* Utilities */,
 				F8734E8E15D6A5BE00642F8B /* File Importing */,
-				F8734E4115D3183100642F8B /* Core Data Model Classes */,
 				F8C93F4B15CD6FB3008C53F8 /* external-projects */,
 				F8C93F4715CD5134008C53F8 /* osxgcdb.entitlements */,
+				F8C93F1D15CD5102008C53F8 /* osxgcdb.xcdatamodeld */,
+				F8734E4115D3183100642F8B /* Core Data Model Classes */,
 				F8C93F1715CD5102008C53F8 /* gcdbAppDelegate.h */,
 				F8C93F1815CD5102008C53F8 /* gcdbAppDelegate.m */,
 				F8C93F1A15CD5102008C53F8 /* MainMenu.xib */,
-				F8C93F1D15CD5102008C53F8 /* osxgcdb.xcdatamodeld */,
+				F8A0B25115FBF10400513D00 /* UI */,
 				F8C93F0C15CD5102008C53F8 /* Supporting Files */,
 				F8C4A00415E42A3500BD0BCB /* gcdbNSView.h */,
 				F8C4A00515E42A3500BD0BCB /* gcdbNSView.m */,
@@ -478,6 +553,11 @@
 				F8C93F4915CD6923008C53F8 /* macgcdb.icns in Resources */,
 				F8C9446B15CD6FB6008C53F8 /* project-downloads.rtf in Resources */,
 				F8C9457415CDCD82008C53F8 /* LICENSE in Resources */,
+				F8A831A215F22555000E65A3 /* flag-red.icns in Resources */,
+				F8D51E3615F2B0A100ABC53B /* flag-red-16x16.png in Resources */,
+				F8EC55D715F2B9D4005F35FD /* flag-off-16x16.png in Resources */,
+				F865BBBF15F37FA7000DEF1A /* cache-found.png in Resources */,
+				F8A0B25915FBF4A800513D00 /* gcdbPreferenceController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -525,6 +605,14 @@
 				F8734EA115D809F300642F8B /* gcdbGeocacheUtils.m in Sources */,
 				F8734EA415D85B8100642F8B /* Userattributes.m in Sources */,
 				F8C4A00615E42A3600BD0BCB /* gcdbNSView.m in Sources */,
+				F8D6622415E8DA34003B0254 /* Cache+categories.m in Sources */,
+				F858DD4215F25EA600DFAC6E /* Userattributes+categories.m in Sources */,
+				F865BBC315F3AB59000DEF1A /* gcdbCacheFoundImageTransformer.m in Sources */,
+				F88D1B3315F54ED40001C42D /* Pocketqueries+categories.m in Sources */,
+				F8106DF315F69ECA00E31F8F /* Waypoint+Categories.m in Sources */,
+				F8106DF715F69FC200E31F8F /* gcdbCoordinateUitls.m in Sources */,
+				F8106DFA15F6A12300E31F8F /* gcdbStaticCoordinates.m in Sources */,
+				F8A0B25815FBF4A800513D00 /* gcdbPreferenceController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

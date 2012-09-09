@@ -30,12 +30,17 @@
     NSManagedObjectModel *managedObjectModel;
     NSManagedObjectContext *managedObjectContext;
 	
-	NSTableView * cacheTableView;
+	NSTableView *cacheTableView;
+    NSTableView *logsTableView;
 	
 	IBOutlet NSArrayController *Caches;
+    IBOutlet NSArrayController *Cachelogs;
     
     IBOutlet WebView *webViewDetails;
-
+    
+    NSPopover *cachePopover;
+    NSButton *togglePopoverButton;
+    
 }
 
 @property (assign) IBOutlet NSWindow *window;
@@ -44,14 +49,23 @@
 @property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
 @property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 
-@property (strong) IBOutlet NSTableView * cacheTableView;
-@property (strong) IBOutlet WebView * webViewDetails;
+@property (strong) IBOutlet NSTableView *cacheTableView;
+@property (strong) IBOutlet NSTableView *logsTableView;
+@property (strong) IBOutlet WebView *webViewDetails;
 
+@property (strong) IBOutlet NSPopover *cachePopover;
+@property (strong) IBOutlet NSButton *togglePopoverButton;
 
 - (IBAction)saveAction:(id)sender;
 
 - (IBAction)importPocketQueryAction:(id)sender;
 
+- (IBAction)togglePopoverButtonSelect:(id)sender;
+
+- (IBAction)showPreferences:(id)sender;
+
 - (NSURL *)applicationFilesDirectory;
+
+- (NSArray *)logsSortDescriptors;
 
 @end

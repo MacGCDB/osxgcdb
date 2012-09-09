@@ -2,51 +2,51 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>en</string>
 	<key>CFBundleDocumentTypes</key>
 	<array>
 		<dict>
-			<key>LSTypeIsPackage</key>
-			<false/>
 			<key>CFBundleTypeExtensions</key>
 			<array>
 				<string>osxgcdb</string>
 			</array>
 			<key>CFBundleTypeIconFile</key>
 			<string>macgcdb.icns</string>
+			<key>CFBundleTypeName</key>
+			<string>osxgcdb SQL</string>
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
+			<key>LSHandlerRank</key>
+			<string>Default</string>
 			<key>LSItemContentTypes</key>
 			<array>
 				<string>com.dangermankonsumprodukte.osxgcdb.osxgcdb</string>
 			</array>
-			<key>CFBundleTypeName</key>
-			<string>SQL</string>
-			<key>LSHandlerRank</key>
-			<string>Default</string>
+			<key>LSTypeIsPackage</key>
+			<false/>
 		</dict>
 		<dict>
-			<key>CFBundleTypeRole</key>
-			<string>Viewer</string>
-			<key>LSItemContentTypes</key>
-			<array>
-				<string>com.dangermankonsumprodukte.osxgcdb.geocacherec</string>
-			</array>
-			<key>CFBundleTypeIconFile</key>
-			<string>macgcdb.icns</string>
 			<key>CFBundleTypeExtensions</key>
 			<array>
 				<string>geocacherec</string>
 			</array>
-			<key>LSTypeIsPackage</key>
-			<false/>
+			<key>CFBundleTypeIconFile</key>
+			<string>macgcdb.icns</string>
 			<key>CFBundleTypeName</key>
 			<string>osxgcdb Geocache</string>
+			<key>CFBundleTypeRole</key>
+			<string>Viewer</string>
 			<key>LSHandlerRank</key>
 			<string>Default</string>
+			<key>LSItemContentTypes</key>
+			<array>
+				<string>com.dangermankonsumprodukte.osxgcdb.geocacherec</string>
+			</array>
+			<key>LSTypeIsPackage</key>
+			<false/>
 		</dict>
 	</array>
-	<key>CFBundleDevelopmentRegion</key>
-	<string>en</string>
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleIconFile</key>
