@@ -113,7 +113,7 @@ static 	NSDateFormatter * dateFormatterMicroseconds = nil;
 		value = [[elements objectAtIndex:0] stringValue];
 		
 		if (elementCount > 1) {
-			NSLog(@"??? Warning: More than one name found for %@.", name);
+			DDLogWarn(@"??? Warning: More than one name found for %@.", name);
 		}
 		
 	} else {
@@ -136,7 +136,7 @@ static 	NSDateFormatter * dateFormatterMicroseconds = nil;
 		value = [self attributeValue:attributeName xmlElement:[elements objectAtIndex:0]];
 		
 		if (elementCount > 1) {
-			NSLog(@"??? Warning: More than one name found for %@.", elementName);
+			DDLogWarn(@"??? Warning: More than one name found for %@.", elementName);
 		}
 		
 	} else {
@@ -172,6 +172,27 @@ static 	NSDateFormatter * dateFormatterMicroseconds = nil;
 		return NO;
 	}
 	
+}
+
++ (NSString *)HTML2Text:(NSString *)html {
+
+    NSScanner *theScanner;
+    NSString *text = nil;
+    theScanner = [NSScanner scannerWithString:html];
+    
+    while ([theScanner isAtEnd] == NO) {
+        
+        [theScanner scanUpToString:@"<" intoString:NULL] ;
+        
+        [theScanner scanUpToString:@">" intoString:&text] ;
+        
+        html = [html stringByReplacingOccurrencesOfString:[NSString stringWithFormat:@"%@>", text] withString:@""];
+    }
+    
+    html = [html stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    
+    return html;
+    
 }
 
 

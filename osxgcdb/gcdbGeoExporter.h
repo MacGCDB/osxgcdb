@@ -1,8 +1,8 @@
 //
-//  Cache+categories.h
+//  gcdbGeoExporter.h
 //  osxgcdb
 //
-//  Created by MacGCDB (macgcdb@googlemail.com) on 25-8-12.
+//  Created by MacGCDB (macgcdb@googlemail.com) on 15-9-12.
 //  Copyright (c) 2012 MacGCDB. All rights reserved.
 //
 //
@@ -20,21 +20,14 @@
 //
 //  You should have received a copy of the GNU General Public License
 //  along with osxgcdb.  If not, see <http://www.gnu.org/licenses/>.
+//
 
-#import "Cache.h"
+#import <Foundation/Foundation.h>
 
-@interface Cache (categories)
+@interface gcdbGeoExporter : NSObject
 
-@property (nonatomic, retain) NSAttributedString* descriptionAttStr;
++ (NSURL*)exportGPX:(NSArray*)selectedCaches outputDirectory:(NSURL*)outDir;
 
-@property (nonatomic, retain) NSString* htmlDescription;
-
-@property (nonatomic, retain) NSAttributedString* nameLinkAttStr;
-
-@property (nonatomic, retain) NSString* smartName;
-
-@property BOOL isNotFound;
-
-@property BOOL isAvailable;
++ (NSURL*)exportKML:(NSArray*)selectedCaches outputDirectory:(NSURL*)outDir;
 
 @end

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE dictionary SYSTEM "file://localhost/System/Library/DTDs/sdef.dtd">
+<dictionary title="Dictionary">
+	<!--
+     <xi:include href="file:///System/Library/ScriptingDefinitions/CocoaStandard.sdef" xpointer="xpointer(/dictionary/suite)"/>
+     -->
+	<suite name="osxgcdb Scripting Suite" code="GCDB" description="osxgcdb scripting facilities.">
+        
+		<command name="Import Pocket Query" code="MGDBiMPT" description="Import a Pocket Query">
+			<cocoa class="osxgcdbScriptImport"/>
+			
+			<direct-parameter description="POSIX file name">
+                <type type="text"/>
+            </direct-parameter>
+		</command>
+        
+		<class name="application" code="capp" description="osxgcdb application class.">
+			<cocoa class="NSApplication"/>
+			<property name="impgpx" code="Igpx" description="Import gpx file" type="text">
+				<cocoa method="impgpx"/>
+			</property>
+			<responds-to command="Import Pocket Query">
+				<cocoa method=""/>
+			</responds-to>
+		</class>
+		
+	</suite>
+</dictionary>

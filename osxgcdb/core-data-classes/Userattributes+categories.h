@@ -28,4 +28,6 @@
 
 @property (nonatomic, retain) NSNumber *redUserFlag;
 
+@property (nonatomic, retain) NSString *redUserFlagString;
+
 @end

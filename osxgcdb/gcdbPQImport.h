@@ -28,7 +28,7 @@
 
 + (void) importPqFiles:(NSArray*)fileNames appDelegate:(gcdbAppDelegate*)delegate;
 
-+ (void) pqProcess:(NSURL*)fileURL
++ (NSString*) pqProcess:(NSURL*)fileURL
       managedModel:(NSManagedObjectModel*)managedObjectModel
        appDelegate:(gcdbAppDelegate*)delegate
      importContext:(NSManagedObjectContext*)importContext;

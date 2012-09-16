@@ -53,4 +53,18 @@
     
 }
 
+- (NSString *)redUserFlagString {
+    
+    if ([[self redUserFlag] intValue] == 1) {
+        return @"YES";
+    } else {
+        return @"NO";
+    }
+    
+}
+
+- (void) setRedUserFlagString:(NSString *)redUserFlagString {
+    
+}
+
 @end

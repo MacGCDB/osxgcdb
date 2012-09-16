@@ -23,6 +23,8 @@
 
 #import "Cache+categories.h"
 #import "Details.h"
+#import "GCVote.h"
+#import "gcdbXMLUtils.h"
 
 @implementation Cache (categories)
 
@@ -97,9 +99,13 @@
         
         NSString *contents = [NSString stringWithFormat:@"%@\n\n%@", [[self relDetails] valueForKey:@"groundspeak_short_description"],[[self relDetails] valueForKey:@"groundspeak_long_description"]];
         
+        DDLogVerbose(@"Before initWithString");
+        
 		
 		NSMutableAttributedString* string = [[NSMutableAttributedString alloc]
 											 initWithString:contents];
+        
+        DDLogVerbose(@"After initWithString");
 		
 		return string;
         
@@ -116,16 +122,23 @@
                                    range:NSMakeRange(0,[body length])
                             withTemplate:@"&nbsp;"];
         
-        NSDictionary *docOptions = [NSDictionary dictionaryWithObject:[NSNumber numberWithFloat:0.5] forKey:NSTimeoutDocumentOption];
+//        NSDictionary *docOptions = [NSDictionary dictionaryWithObject:[NSNumber numberWithFloat:0.5] forKey:NSTimeoutDocumentOption];
 		
-        NSLog(@"Before initWithHTML");
+        DDLogVerbose(@"Before initWithHTML");
         
 		NSAttributedString *htmlString = [[NSAttributedString alloc]
                                           initWithHTML:[body dataUsingEncoding:[body fastestEncoding]]
-                                          options:docOptions
+                                          options:nil
                                           documentAttributes:NULL];
         
-        NSLog(@"After initWithHTML");
+        
+        
+//        NSString *body = [NSString stringWithFormat:@"%@\n\n%@", [[self relDetails] valueForKey:@"groundspeak_short_description"],[[self relDetails] valueForKey:@"groundspeak_long_description"]];
+//        
+//        NSAttributedString *htmlString = [[NSMutableAttributedString alloc]
+//         initWithString:[gcdbXMLUtils HTML2Text:body]];
+        
+        DDLogVerbose(@"After initWithHTML");
 
         
 		return htmlString;
@@ -141,9 +154,6 @@
 }
 
 - (NSString*) htmlDescription {
-    
-    NSLog(@"Before htmldescr");
-
 	
 	NSMutableString *contents = [@"" mutableCopy];
 	
@@ -172,9 +182,6 @@
     
     [contents appendString:@"</body></html>"];
     
-    NSLog(@"After htmldescr");
-
-    
 	return contents;
 	
 	
@@ -196,6 +203,40 @@
 }
 
 - (void) setIsNotFound:(BOOL)input {
+	
+}
+
+- (BOOL) isAvailable {
+	
+	if ([[[self relDetails] valueForKey:@"available"] isEqualToString:@"False"]) {
+		return NO;
+	} else {
+		return YES;
+	}
+	
+}
+
+- (void) setIsAvailable:(BOOL)input {
+	
+}
+
+- (NSString*) smartName {
+	
+	return [NSString stringWithFormat:@"%@ %@ %@/%@ %@ %@ - %.1f/%@",
+			[self id],
+			[self symPictogram],
+			[[self relDetails] groundspeak_difficulty],
+			[[self relDetails] groundspeak_terrain],
+			[[[self relDetails] groundspeak_container] substringToIndex:1],
+			[[self relDetails] groundspeak_name],
+			[[[self relVote] voteAverage] floatValue],
+			[[self relVote] count]
+			];
+    
+}
+
+- (void) setSmartName:(NSString*)input {
+    
 	
 }
 

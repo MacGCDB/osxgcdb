@@ -23,7 +23,6 @@
 
 #import "gcdbAppDelegate.h"
 
-#import "GRMustache.h"
 #import "SSZipArchive.h"
 
 #import "gcdbCacheFoundImageTransformer.h"
@@ -34,6 +33,9 @@
 #import "Cachelog.h"
 #import "gcdbPreferenceController.h"
 #import "gcdbStaticCoordinates.h"
+#import "gcdbGCVoteImporter.h"
+#import "gcdbTemplateExporter.h"
+#import "gcdbGeoExporter.h"
 
 #define YOUR_STORE_TYPE NSSQLiteStoreType
 #define YOUR_EXTERNAL_RECORD_EXTENSION @"geocacherec"
@@ -52,8 +54,26 @@
 @synthesize cachePopover;
 @synthesize togglePopoverButton;
 
+@synthesize progressLabel;
+@synthesize progressIndicator;
+
+@synthesize window;
+
+
+static dispatch_queue_t importExportQueue;
+
+
 gcdbPreferenceController *preferenceController;
 
+- (dispatch_queue_t)importExportQueue {
+	
+	if (!importExportQueue) {
+		importExportQueue = dispatch_queue_create("com.osxgcdb.importexportqueue", 0);
+	}
+	
+	return importExportQueue;
+	
+}
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
@@ -73,31 +93,29 @@ gcdbPreferenceController *preferenceController;
     DDLogInfo(@"Initialized logger.");
     
     DDLogInfo(@"log file at: %@", [[fileLogger currentLogFileInfo] filePath]);
-    
-    NSDictionary *dictionary = [NSDictionary dictionaryWithObject:[NSNumber numberWithInt:2] forKey:@"count"];
-    NSString *templateString = @"I have {{count}} arms.";
-    NSString *rendering = [GRMustacheTemplate renderObject:dictionary fromString:templateString error:NULL];
-    
-    DDLogInfo(@"Rendered template: %@", rendering);
 
     NSUserNotificationCenter *center = [NSUserNotificationCenter defaultUserNotificationCenter];
     [center setDelegate:self];
     
+    NSString *homeDir = NSHomeDirectory();
+    
+    DDLogVerbose(@"Homedir %@",homeDir);
+    
 }
 
 - (void)userNotificationCenter:(NSUserNotificationCenter *)center didDeliverNotification:(NSUserNotification *)notification {
-   NSLog(@"didDeliverNotification."); 
+   DDLogVerbose(@"didDeliverNotification."); 
 }
 
 - (void)userNotificationCenter:(NSUserNotificationCenter *)center didActivateNotification:(NSUserNotification *)notification
 {
-    NSLog(@"didActivateNotification.");
+    DDLogVerbose(@"didActivateNotification.");
 }
 
 
 - (BOOL)userNotificationCenter:(NSUserNotificationCenter *)center shouldPresentNotification:(NSUserNotification *)notification
 {
-    NSLog(@"shouldPresentNotification");
+    DDLogVerbose(@"shouldPresentNotification");
     return YES;
 }
 
@@ -301,10 +319,113 @@ gcdbPreferenceController *preferenceController;
 		
 	}
     
-    
+}
 
+- (void) importGPXFile:(NSString *)filePath {
+	
+	DDLogVerbose(@"In Applescript called method importGPXFile command for %@", filePath);
+	
+	NSURL *URLPath = [NSURL fileURLWithPath:filePath];
+	
+	NSArray* fileNames = [NSArray arrayWithObject:URLPath];
+	
+	// Starts a new thread:
+	[gcdbPQImport importPqFiles:fileNames appDelegate:self];
     
 }
+
+// Download and process http://gcvote.com/dump/votes.csv.gz
+
+- (IBAction)importGCVoteAction:(id)sender {
+    
+    [self indicateProgressStart:@"Downloading...."];
+    
+    NSURL *gcvoteURL = [NSURL URLWithString:@"http://gcvote.com/dump/votes.csv.gz"];
+    
+    // Create the request.
+    NSURLRequest *theRequest=[NSURLRequest requestWithURL:gcvoteURL
+                                              cachePolicy:NSURLRequestUseProtocolCachePolicy
+                                          timeoutInterval:60.0];
+    // create the connection with the request
+    // and start loading the data
+    NSURLConnection *theConnection=[[NSURLConnection alloc] initWithRequest:theRequest delegate:self];
+    if (theConnection) {
+        // Create the NSMutableData to hold the received data.
+        // receivedData is an instance variable declared elsewhere.
+        receivedData = [NSMutableData data];
+    } else {
+        // Inform the user that the connection failed.
+        
+        DDLogError(@"Connection failed.");
+        
+        [self indicateProgressStop];
+    }
+    
+//    NSData *gcvoteContents = [gcvoteURL resourceDataUsingCache:YES];
+//
+//    DDLogVerbose(@"Step 1: initializing string.");
+//    
+//    NSString *csvContents = [NSString stringWithContentsOfURL:(NSURL *)gcvoteURL usedEncoding:nil error:nil ];
+//    
+//    DDLogVerbose(@"Step 2: Getting array of lines.");
+//    
+//    NSCharacterSet* csvSeparatorSet = [NSCharacterSet characterSetWithCharactersInString:@",\""];
+//    
+//    for (NSString *csvLine  in [csvContents componentsSeparatedByCharactersInSet:
+//                                [NSCharacterSet newlineCharacterSet]]) {
+//        
+//        DDLogVerbose(@"%@", csvLine);
+//        
+//        return;
+//        
+//    }
+    
+
+}
+
+- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
+{
+    // This method is called when the server has determined that it
+    // has enough information to create the NSURLResponse.
+    
+    // It can be called multiple times, for example in the case of a
+    // redirect, so each time we reset the data.
+    
+    // receivedData is an instance variable declared elsewhere.
+    [receivedData setLength:0];
+}
+
+
+- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
+{
+    // Append the new data to receivedData.
+    // receivedData is an instance variable declared elsewhere.
+    [receivedData appendData:data];
+    [self setProgressText:[NSString stringWithFormat:@"Received %lu bytes", [receivedData length]]];
+    DDLogVerbose(@"Received %lu bytes", [receivedData length]);
+}
+
+
+- (void)connection:(NSURLConnection *)connection
+  didFailWithError:(NSError *)error
+{
+    [self indicateProgressStop];
+    // inform the user
+    DDLogError(@"Connection failed! Error - %@ %@",
+          [error localizedDescription],
+          [[error userInfo] objectForKey:NSURLErrorFailingURLStringErrorKey]);
+}
+
+- (void)connectionDidFinishLoading:(NSURLConnection *)connection
+{
+    // do something with the data
+    // receivedData is declared as a method instance elsewhere
+    NSLog(@"Succeeded! Received %ld bytes of data",[receivedData length]);
+    
+    [gcdbGCVoteImporter importGCVoteCSV:receivedData delegate:self];
+
+}
+
 
 - (NSApplicationTerminateReply)applicationShouldTerminate:(NSApplication *)sender
 {
@@ -391,14 +512,8 @@ gcdbPreferenceController *preferenceController;
                 }
                 
             }
-            
-            NSLog(@"Before webview");
-            
-            
+
             [[webViewDetails mainFrame] loadHTMLString:htmlString baseURL:nil];
-            
-            NSLog(@"After webview");
-            
             
         }
         
@@ -466,6 +581,118 @@ gcdbPreferenceController *preferenceController;
 	[preferenceController showWindow:self];
 	
 	[prefWindow makeKeyWindow];
+	
+}
+
+- (IBAction) setHomeCoordinates:(id)sender {
+	
+	NSArray *selectedWaypoints = [Caches selectedObjects];
+	
+	if ([selectedWaypoints count] == 1) {
+		
+		Waypoint *wpt = [selectedWaypoints objectAtIndex:0];
+		
+		[gcdbStaticCoordinates setHomeLat:[[wpt lat] doubleValue]];
+		[gcdbStaticCoordinates setHomeLon:[[wpt lon] doubleValue]];
+		
+		[cacheTableView reloadData];
+	}
+}
+
+
+- (IBAction)openExportSheet:(id)sender
+{
+	[NSApp beginSheet:exportSheet
+	   modalForWindow:window
+		modalDelegate:self
+	   didEndSelector:NULL
+		  contextInfo:nil];
+}
+
+- (IBAction)closeExportSheet:(id)sender
+{
+	[NSApp endSheet:exportSheet];
+	[exportSheet orderOut:sender];
+}
+
+- (IBAction)exportTemplate:(id)sender {
+	[NSApp endSheet:exportSheet];
+	[exportSheet orderOut:sender];
+    
+    [gcdbTemplateExporter exportDBbyTemplate:self];
+    
+}
+
+- (IBAction)openFilterEditor:(id)sender
+{
+	[NSApp beginSheet:filterSheet
+	   modalForWindow:window
+		modalDelegate:nil
+	   didEndSelector:NULL
+		  contextInfo:nil];
+}
+
+- (IBAction)closeFilterEditor:(id)sender
+{
+	[NSApp endSheet:filterSheet];
+	[filterSheet orderOut:sender];
+}
+
+- (void) indicateProgressStart:(NSString*)progressText {
+	
+	[progressIndicator setUsesThreadedAnimation:YES];
+	[progressIndicator setHidden:NO];
+	[progressLabel setHidden:NO];
+	[progressLabel setStringValue:progressText];
+	[progressIndicator startAnimation:self];
+    
+}
+
+- (void) indicateProgressStop {
+	
+	[progressLabel setStringValue:@""];
+	[progressLabel setHidden:YES];
+	[progressIndicator stopAnimation:self];
+	[progressIndicator setHidden:YES];
+	
+}
+
+- (void) setProgressText:(NSString*)progressText {
+    [progressLabel setHidden:NO];
+	[progressLabel setStringValue:progressText];
+}
+
+/**
+ Opens a GPX file in Garmin Basecamp.app.
+ */
+
+- (IBAction) OpenSelectedInBasecamp:(id)sender {
+    
+    NSString *homeDir = NSHomeDirectory();
+    
+    DDLogVerbose(@"Homedir %@",homeDir);
+    
+	NSURL* url = [gcdbGeoExporter exportGPX:[Caches selectedObjects]
+						   outputDirectory:[self applicationFilesDirectory]];
+	
+	//--------------------------------------++++++++*******************
+	
+	//[NSWorkspace sharedWorkspace];
+	
+	NSArray *retID = [NSArray array];
+	NSAppleEventDescriptor* targetDesc2 = [NSAppleEventDescriptor nullDescriptor];
+    
+	
+	[[NSWorkspace sharedWorkspace]
+	 openURLs:[NSArray arrayWithObjects:url,nil]
+	 withAppBundleIdentifier:@"com.garmin.BaseCamp"
+	 options:NSWorkspaceLaunchDefault
+	 additionalEventParamDescriptor:targetDesc2
+	 launchIdentifiers:&retID
+	 ];
+	
+	
+	DDLogVerbose(@"Ret ID %@",[retID description]);
 	
 }
 

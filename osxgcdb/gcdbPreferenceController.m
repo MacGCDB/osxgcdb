@@ -70,7 +70,6 @@
 
 - (IBAction)getLocalCoordinatesPressed:(id)sender {
     
-    NSLog(@"Pressed");
     [[NSUserDefaults standardUserDefaults] setDouble:[localLat doubleValue] forKey:@"homeLat"];
 	[[NSUserDefaults standardUserDefaults] setDouble:[localLon doubleValue] forKey:@"homeLon"];
     

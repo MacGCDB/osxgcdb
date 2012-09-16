@@ -41,6 +41,13 @@
     NSPopover *cachePopover;
     NSButton *togglePopoverButton;
     
+    NSMutableData *receivedData;
+    
+    IBOutlet NSWindow *exportSheet;
+    
+    IBOutlet NSWindow *filterSheet;
+    
+    
 }
 
 @property (assign) IBOutlet NSWindow *window;
@@ -56,16 +63,40 @@
 @property (strong) IBOutlet NSPopover *cachePopover;
 @property (strong) IBOutlet NSButton *togglePopoverButton;
 
+@property (strong) IBOutlet NSTextField *progressLabel;
+@property (strong) IBOutlet NSProgressIndicator *progressIndicator;
+
+- (dispatch_queue_t)importExportQueue;
+
 - (IBAction)saveAction:(id)sender;
 
 - (IBAction)importPocketQueryAction:(id)sender;
+
+- (IBAction)importGCVoteAction:(id)sender;
 
 - (IBAction)togglePopoverButtonSelect:(id)sender;
 
 - (IBAction)showPreferences:(id)sender;
 
+- (IBAction)exportTemplate:(id)sender;
+- (IBAction) OpenSelectedInBasecamp:(id)sender;
+
 - (NSURL *)applicationFilesDirectory;
 
 - (NSArray *)logsSortDescriptors;
+
+- (IBAction) setHomeCoordinates:(id)sender;
+
+- (IBAction) openExportSheet:(id)sender;
+- (IBAction) closeExportSheet:(id)sender;
+
+- (IBAction) openFilterEditor:(id)sender;
+- (IBAction) closeFilterEditor:(id)sender;
+
+- (void) importGPXFile:(NSString *)filePath;
+
+- (void) indicateProgressStart:(NSString*)progressText;
+- (void) indicateProgressStop;
+- (void) setProgressText:(NSString*)progressText;
 
 @end

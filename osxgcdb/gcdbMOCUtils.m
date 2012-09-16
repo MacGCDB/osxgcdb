@@ -84,7 +84,7 @@
 				//NSLog(@"Updating %@ object with %@ %@",entityName,formatString,value);
 				
 			} else {
-				NSLog(@"+++ Warning: double %@ object entry: %@ %@",entityName,formatString,value);
+				DDLogWarn(@"+++ Warning: double %@ object entry: %@ %@",entityName,formatString,value);
 			}
 			
 			
@@ -157,7 +157,7 @@
 			
 			if (i!=0) {
 				
-				NSLog(@"+++ Vote Warning: double cache: %@",[curCache name]);
+				DDLogWarn(@"+++ Vote Warning: double cache: %@",[curCache name]);
 			}
 			
 			

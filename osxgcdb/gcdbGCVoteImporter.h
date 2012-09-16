@@ -1,8 +1,8 @@
 //
-//  Cache+categories.h
+//  gcdbGCVoteImporter.h
 //  osxgcdb
 //
-//  Created by MacGCDB (macgcdb@googlemail.com) on 25-8-12.
+//  Created by MacGCDB (macgcdb@googlemail.com) on 9-9-12.
 //  Copyright (c) 2012 MacGCDB. All rights reserved.
 //
 //
@@ -21,20 +21,11 @@
 //  You should have received a copy of the GNU General Public License
 //  along with osxgcdb.  If not, see <http://www.gnu.org/licenses/>.
 
-#import "Cache.h"
+#import <Foundation/Foundation.h>
+#import "gcdbAppDelegate.h"
 
-@interface Cache (categories)
+@interface gcdbGCVoteImporter : NSObject
 
-@property (nonatomic, retain) NSAttributedString* descriptionAttStr;
-
-@property (nonatomic, retain) NSString* htmlDescription;
-
-@property (nonatomic, retain) NSAttributedString* nameLinkAttStr;
-
-@property (nonatomic, retain) NSString* smartName;
-
-@property BOOL isNotFound;
-
-@property BOOL isAvailable;
++ (void) importGCVoteCSV:(NSData*)voteData delegate:(gcdbAppDelegate*)appDelegate;
 
 @end

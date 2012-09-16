@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F80BBC521604FAA200EF0A81 /* gcdbGeoExporter.m in Sources */ = {isa = PBXBuildFile; fileRef = F80BBC511604FAA200EF0A81 /* gcdbGeoExporter.m */; };
 		F8106DF315F69ECA00E31F8F /* Waypoint+Categories.m in Sources */ = {isa = PBXBuildFile; fileRef = F8106DF215F69ECA00E31F8F /* Waypoint+Categories.m */; };
 		F8106DF715F69FC200E31F8F /* gcdbCoordinateUitls.m in Sources */ = {isa = PBXBuildFile; fileRef = F8106DF615F69FC200E31F8F /* gcdbCoordinateUitls.m */; };
 		F8106DFA15F6A12300E31F8F /* gcdbStaticCoordinates.m in Sources */ = {isa = PBXBuildFile; fileRef = F8106DF915F6A12300E31F8F /* gcdbStaticCoordinates.m */; };
@@ -33,7 +34,11 @@
 		F8A0B25815FBF4A800513D00 /* gcdbPreferenceController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8A0B25615FBF4A800513D00 /* gcdbPreferenceController.m */; };
 		F8A0B25915FBF4A800513D00 /* gcdbPreferenceController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8A0B25715FBF4A800513D00 /* gcdbPreferenceController.xib */; };
 		F8A0B25F15FC0B3300513D00 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8A0B25E15FC0B3300513D00 /* CoreLocation.framework */; };
+		F8A0B26215FCCC0400513D00 /* osxgcdb.sdef in Resources */ = {isa = PBXBuildFile; fileRef = F8A0B26115FCCC0400513D00 /* osxgcdb.sdef */; };
+		F8A0B26515FCCF2500513D00 /* osxgcdbScriptImport.m in Sources */ = {isa = PBXBuildFile; fileRef = F8A0B26415FCCF2500513D00 /* osxgcdbScriptImport.m */; };
+		F8A0B26815FCFF7600513D00 /* gcdbGCVoteImporter.m in Sources */ = {isa = PBXBuildFile; fileRef = F8A0B26715FCFF7600513D00 /* gcdbGCVoteImporter.m */; };
 		F8A831A215F22555000E65A3 /* flag-red.icns in Resources */ = {isa = PBXBuildFile; fileRef = F8A831A115F22555000E65A3 /* flag-red.icns */; };
+		F8BDF32315FFDDD5008F5B63 /* gcdbTemplateExporter.m in Sources */ = {isa = PBXBuildFile; fileRef = F8BDF32215FFDDD5008F5B63 /* gcdbTemplateExporter.m */; };
 		F8C4A00615E42A3600BD0BCB /* gcdbNSView.m in Sources */ = {isa = PBXBuildFile; fileRef = F8C4A00515E42A3500BD0BCB /* gcdbNSView.m */; };
 		F8C93F0615CD5102008C53F8 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8C93F0515CD5102008C53F8 /* Cocoa.framework */; };
 		F8C93F1015CD5102008C53F8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F8C93F0E15CD5102008C53F8 /* InfoPlist.strings */; };
@@ -82,6 +87,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F80BBC501604FAA200EF0A81 /* gcdbGeoExporter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gcdbGeoExporter.h; sourceTree = "<group>"; };
+		F80BBC511604FAA200EF0A81 /* gcdbGeoExporter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = gcdbGeoExporter.m; sourceTree = "<group>"; };
 		F8106DF115F69ECA00E31F8F /* Waypoint+Categories.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Waypoint+Categories.h"; path = "core-data-classes/Waypoint+Categories.h"; sourceTree = "<group>"; };
 		F8106DF215F69ECA00E31F8F /* Waypoint+Categories.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Waypoint+Categories.m"; path = "core-data-classes/Waypoint+Categories.m"; sourceTree = "<group>"; };
 		F8106DF515F69FC200E31F8F /* gcdbCoordinateUitls.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gcdbCoordinateUitls.h; sourceTree = "<group>"; };
@@ -131,7 +138,14 @@
 		F8A0B25615FBF4A800513D00 /* gcdbPreferenceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = gcdbPreferenceController.m; sourceTree = "<group>"; };
 		F8A0B25715FBF4A800513D00 /* gcdbPreferenceController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = gcdbPreferenceController.xib; sourceTree = "<group>"; };
 		F8A0B25E15FC0B3300513D00 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		F8A0B26115FCCC0400513D00 /* osxgcdb.sdef */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = osxgcdb.sdef; sourceTree = "<group>"; };
+		F8A0B26315FCCF2500513D00 /* osxgcdbScriptImport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = osxgcdbScriptImport.h; sourceTree = "<group>"; };
+		F8A0B26415FCCF2500513D00 /* osxgcdbScriptImport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = osxgcdbScriptImport.m; sourceTree = "<group>"; };
+		F8A0B26615FCFF7500513D00 /* gcdbGCVoteImporter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gcdbGCVoteImporter.h; sourceTree = "<group>"; };
+		F8A0B26715FCFF7600513D00 /* gcdbGCVoteImporter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = gcdbGCVoteImporter.m; sourceTree = "<group>"; };
 		F8A831A115F22555000E65A3 /* flag-red.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = "flag-red.icns"; path = "artwork/flag-red.icns"; sourceTree = "<group>"; };
+		F8BDF32115FFDDD5008F5B63 /* gcdbTemplateExporter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gcdbTemplateExporter.h; sourceTree = "<group>"; };
+		F8BDF32215FFDDD5008F5B63 /* gcdbTemplateExporter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = gcdbTemplateExporter.m; sourceTree = "<group>"; };
 		F8C4A00415E42A3500BD0BCB /* gcdbNSView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gcdbNSView.h; sourceTree = "<group>"; };
 		F8C4A00515E42A3500BD0BCB /* gcdbNSView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = gcdbNSView.m; sourceTree = "<group>"; };
 		F8C93F0115CD5102008C53F8 /* osxgcdb.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = osxgcdb.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -263,6 +277,8 @@
 			children = (
 				F8734E8F15D6A67E00642F8B /* gcdbPQImport.h */,
 				F8734E9015D6A67E00642F8B /* gcdbPQImport.m */,
+				F8A0B26615FCFF7500513D00 /* gcdbGCVoteImporter.h */,
+				F8A0B26715FCFF7600513D00 /* gcdbGCVoteImporter.m */,
 			);
 			name = "File Importing";
 			sourceTree = "<group>";
@@ -298,6 +314,16 @@
 			name = UI;
 			sourceTree = "<group>";
 		};
+		F8A0B26015FCCB6600513D00 /* Scripting */ = {
+			isa = PBXGroup;
+			children = (
+				F8A0B26115FCCC0400513D00 /* osxgcdb.sdef */,
+				F8A0B26315FCCF2500513D00 /* osxgcdbScriptImport.h */,
+				F8A0B26415FCCF2500513D00 /* osxgcdbScriptImport.m */,
+			);
+			name = Scripting;
+			sourceTree = "<group>";
+		};
 		F8A8319F15F22543000E65A3 /* Artwork */ = {
 			isa = PBXGroup;
 			children = (
@@ -307,6 +333,17 @@
 				F8A831A115F22555000E65A3 /* flag-red.icns */,
 			);
 			name = Artwork;
+			sourceTree = "<group>";
+		};
+		F8BDF31F15FFDD18008F5B63 /* File Exporting */ = {
+			isa = PBXGroup;
+			children = (
+				F8BDF32115FFDDD5008F5B63 /* gcdbTemplateExporter.h */,
+				F8BDF32215FFDDD5008F5B63 /* gcdbTemplateExporter.m */,
+				F80BBC501604FAA200EF0A81 /* gcdbGeoExporter.h */,
+				F80BBC511604FAA200EF0A81 /* gcdbGeoExporter.m */,
+			);
+			name = "File Exporting";
 			sourceTree = "<group>";
 		};
 		F8C93EF615CD5102008C53F8 = {
@@ -362,6 +399,7 @@
 			children = (
 				F8734E9215D7EE5E00642F8B /* Utilities */,
 				F8734E8E15D6A5BE00642F8B /* File Importing */,
+				F8BDF31F15FFDD18008F5B63 /* File Exporting */,
 				F8C93F4B15CD6FB3008C53F8 /* external-projects */,
 				F8C93F4715CD5134008C53F8 /* osxgcdb.entitlements */,
 				F8C93F1D15CD5102008C53F8 /* osxgcdb.xcdatamodeld */,
@@ -373,6 +411,7 @@
 				F8C93F0C15CD5102008C53F8 /* Supporting Files */,
 				F8C4A00415E42A3500BD0BCB /* gcdbNSView.h */,
 				F8C4A00515E42A3500BD0BCB /* gcdbNSView.m */,
+				F8A0B26015FCCB6600513D00 /* Scripting */,
 			);
 			path = osxgcdb;
 			sourceTree = "<group>";
@@ -558,6 +597,7 @@
 				F8EC55D715F2B9D4005F35FD /* flag-off-16x16.png in Resources */,
 				F865BBBF15F37FA7000DEF1A /* cache-found.png in Resources */,
 				F8A0B25915FBF4A800513D00 /* gcdbPreferenceController.xib in Resources */,
+				F8A0B26215FCCC0400513D00 /* osxgcdb.sdef in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -613,6 +653,10 @@
 				F8106DF715F69FC200E31F8F /* gcdbCoordinateUitls.m in Sources */,
 				F8106DFA15F6A12300E31F8F /* gcdbStaticCoordinates.m in Sources */,
 				F8A0B25815FBF4A800513D00 /* gcdbPreferenceController.m in Sources */,
+				F8A0B26515FCCF2500513D00 /* osxgcdbScriptImport.m in Sources */,
+				F8A0B26815FCFF7600513D00 /* gcdbGCVoteImporter.m in Sources */,
+				F8BDF32315FFDDD5008F5B63 /* gcdbTemplateExporter.m in Sources */,
+				F80BBC521604FAA200EF0A81 /* gcdbGeoExporter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -35,4 +35,6 @@
 + (NSNumber*) attributeDouble:(NSString *)attributeName xmlElement:(NSXMLElement *)element;
 + (bool) attributeBoolean:(NSString *)attributeName xmlElement:(NSXMLElement *)element;
 
++ (NSString *)HTML2Text:(NSString *)html;
+
 @end
