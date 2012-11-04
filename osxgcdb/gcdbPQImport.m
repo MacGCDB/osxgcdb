@@ -40,6 +40,7 @@
 
 NSString* const wayPointGPXName = @"Waypoints for Cache Listings Generated from Geocaching.com";
 
+static NSManagedObjectContext *importContext;
 
 @implementation gcdbPQImport
 
@@ -50,12 +51,14 @@ NSString* const wayPointGPXName = @"Waypoints for Cache Listings Generated from 
     
     NSManagedObjectContext *parentContext = [delegate managedObjectContext];
     
-    NSManagedObjectContext *importContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSPrivateQueueConcurrencyType];
+    if (!importContext) {
+        importContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSPrivateQueueConcurrencyType];
     
-    [importContext setParentContext:parentContext];
-    
-    [importContext setUndoManager:nil];
-    [importContext setMergePolicy:NSMergeByPropertyObjectTrumpMergePolicy];
+        [importContext setParentContext:parentContext];
+        
+        [importContext setUndoManager:nil];
+        [importContext setMergePolicy:NSMergeByPropertyObjectTrumpMergePolicy];
+    }
     
     [importContext performBlock:^{
         
